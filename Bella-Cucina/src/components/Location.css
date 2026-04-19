@@ -1,0 +1,41 @@
+.location-container {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+.map-wrapper {
+  flex: 2;
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+}
+
+.contact-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.info-block h3 {
+  color: var(--accent-gold);
+  margin-bottom: 15px;
+  font-size: 1.6rem;
+}
+
+.info-block p {
+  color: #ccc;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 992px) {
+  .location-container {
+    flex-direction: column;
+  }
+  .map-wrapper, .contact-info {
+    width: 100%;
+  }
+}
