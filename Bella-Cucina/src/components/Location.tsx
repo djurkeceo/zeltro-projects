@@ -24,18 +24,36 @@ const Location = () => {
             ></iframe>
           </div>
           <div className="contact-info">
-            <div className="info-block">
+            <motion.div
+              className="info-block"
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.4, delay: 0.05 }}
+              viewport={{ once: true }}
+            >
               <h3>Address</h3>
               <p>Piazza della Rotonda, 00186<br />Rome, Italy</p>
-            </div>
-            <div className="info-block">
+            </motion.div>
+            <motion.div
+              className="info-block"
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.4, delay: 0.12 }}
+              viewport={{ once: true }}
+            >
               <h3>Opening Hours</h3>
               <p>Mon - Fri: 18:00 - 23:30<br />Sat - Sun: 18:00 - 00:00</p>
-            </div>
-            <div className="info-block">
+            </motion.div>
+            <motion.div
+              className="info-block"
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.4, delay: 0.19 }}
+              viewport={{ once: true }}
+            >
               <h3>Contact</h3>
               <p>Phone: +39 06 123 4567<br />Email: ciao@bellacucina.it</p>
-            </div>
+            </motion.div>
           </div>
         </div>
       </motion.div>

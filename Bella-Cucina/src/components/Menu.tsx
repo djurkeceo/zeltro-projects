@@ -40,7 +40,11 @@ const containerVariants = {
 
 const itemVariants = {
   hidden: { y: 20, opacity: 0 },
-  visible: { y: 0, opacity: 1 }
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: { duration: 0.45, ease: "easeOut" }
+  }
 };
 
 const Menu = () => {
@@ -48,20 +52,29 @@ const Menu = () => {
     <section id="menu" className="menu">
       <h2 className="section-title">Nostro Menu</h2>
       {menuItems.map((section, idx) => (
-        <div key={idx} className="menu-category">
+        <motion.div
+          key={idx}
+          className="menu-category"
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.25 }}
+        >
           <h3 className="category-title">{section.category}</h3>
           <motion.div 
             className="menu-grid"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.2 }}
           >
             {section.items.map((item, itemIdx) => (
               <motion.div 
                 key={itemIdx} 
                 className="menu-card"
                 variants={itemVariants}
+                whileHover={{ y: -8, scale: 1.015 }}
+                transition={{ type: "spring", stiffness: 300, damping: 22 }}
               >
                 <div className="card-header">
                   <h4>{item.name}</h4>
@@ -71,7 +84,7 @@ const Menu = () => {
               </motion.div>
             ))}
           </motion.div>
-        </div>
+        </motion.div>
       ))}
     </section>
   );
