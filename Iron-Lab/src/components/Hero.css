@@ -1,0 +1,132 @@
+.hero {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 5%;
+  overflow: hidden;
+}
+
+.hero-video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(13, 13, 13, 0.9) 0%, rgba(13, 13, 13, 0.4) 50%, rgba(13, 13, 13, 0.8) 100%);
+}
+
+.hero-content {
+  max-width: 800px;
+}
+
+.hero-subtitle {
+  color: var(--primary-red);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-family: var(--font-bebas);
+}
+
+.hero-title {
+  font-size: clamp(5rem, 15vw, 10rem);
+  line-height: 0.9;
+  margin-bottom: 2rem;
+}
+
+.text-accent {
+  color: var(--primary-red);
+  -webkit-text-stroke: 2px var(--primary-red);
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 20px;
+}
+
+.btn-large {
+  padding: 16px 48px;
+  font-size: 1.4rem;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 16px 48px;
+  font-family: var(--font-bebas);
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+.btn-outline:hover {
+  background: white;
+  color: black;
+}
+
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.mouse {
+  width: 26px;
+  height: 42px;
+  border: 2px solid var(--text-muted);
+  border-radius: 15px;
+  position: relative;
+}
+
+.wheel {
+  width: 4px;
+  height: 8px;
+  background: var(--primary-red);
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+  animation: scroll-anim 1.5s infinite;
+}
+
+@keyframes scroll-anim {
+  0% { opacity: 0; transform: translate(-50%, 0); }
+  50% { opacity: 1; transform: translate(-50%, 10px); }
+  100% { opacity: 0; transform: translate(-50%, 20px); }
+}
+
+@media (max-width: 768px) {
+  .hero-btns {
+    flex-direction: column;
+  }
+}
