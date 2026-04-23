@@ -1,19 +1,23 @@
 import { motion } from 'framer-motion';
+import bellaCucinaLogo from '../assets/bella cucina logo transparent.png';
 import './Hero.css';
 
 const Hero = () => {
   return (
     <section id="hero" className="hero">
       <div className="hero-overlay"></div>
-      <motion.div 
+      <motion.div
         className="hero-content"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         viewport={{ once: true }}
       >
-        <h1>Benvenuti da Bella Cucina</h1>
-        <p>Experience the heart of Italy in every bite.</p>
+        <img
+          src={bellaCucinaLogo}
+          alt="Bella Cucina logo"
+          className="hero-logo-art"
+        />
         <div className="hero-btns">
           <motion.a
             href="#menu"
@@ -22,7 +26,7 @@ const Hero = () => {
             whileTap={{ scale: 0.98 }}
             transition={{ type: 'spring', stiffness: 320, damping: 20 }}
           >
-            View Menu
+            Visit Our Menu
           </motion.a>
           <motion.a
             href="#reservation"
@@ -31,7 +35,7 @@ const Hero = () => {
             whileTap={{ scale: 0.98 }}
             transition={{ type: 'spring', stiffness: 320, damping: 20 }}
           >
-            Reserve a Table
+            Book a Table
           </motion.a>
         </div>
       </motion.div>
