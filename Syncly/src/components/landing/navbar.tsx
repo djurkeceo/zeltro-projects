@@ -4,9 +4,9 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 const navItems = [
-  { label: "Features", href: "#features" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "About", href: "#about" },
+  { label: "Features", href: "/features" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "About", href: "/about" },
 ];
 
 export function Navbar() {
@@ -44,20 +44,21 @@ export function Navbar() {
               }}
               transition={{ duration: 0.35, ease: "easeOut" }}
             >
-              <a href={item.href} className="transition-colors hover:text-white">
+              <Link href={item.href} className="transition-colors hover:text-white">
                 {item.label}
-              </a>
+              </Link>
             </motion.li>
           ))}
         </motion.ul>
-        <motion.a
-          href="#waitlist"
+        <motion.div
           className="rounded-xl border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-white transition hover:bg-white/20"
           whileHover={{ y: -1, scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
         >
-          Get Started
-        </motion.a>
+          <Link href="/pricing" className="block">
+            Get Started
+          </Link>
+        </motion.div>
       </nav>
     </motion.header>
   );
