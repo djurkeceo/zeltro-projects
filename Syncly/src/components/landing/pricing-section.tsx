@@ -1,34 +1,11 @@
 "use client";
 
+import Link from "next/link";
 import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import { AnimatedSection } from "./animated-section";
-
-const pricingPlans = [
-  {
-    name: "Free",
-    monthly: 0,
-    yearly: 0,
-    description: "For individuals exploring workflow automation.",
-    features: ["1 workspace", "Basic integrations", "Community support"],
-  },
-  {
-    name: "Pro",
-    monthly: 39,
-    yearly: 32,
-    description: "For fast-moving teams scaling operations.",
-    features: ["Unlimited workflows", "Priority support", "Advanced analytics"],
-    popular: true,
-  },
-  {
-    name: "Enterprise",
-    monthly: 99,
-    yearly: 85,
-    description: "For global organizations with custom requirements.",
-    features: ["SAML/SSO", "Audit logs", "Dedicated success manager"],
-  },
-];
+import { pricingPlans } from "./pricing-data";
 
 export function PricingSection() {
   const [billingCycle, setBillingCycle] = useState<"monthly" | "yearly">("monthly");
@@ -140,12 +117,12 @@ export function PricingSection() {
                 </li>
               ))}
             </ul>
-            <a
-              href="#waitlist"
+            <Link
+              href={{ pathname: "/payment", query: { plan: plan.name, cycle: billingCycle } }}
               className="mt-8 inline-flex w-full justify-center rounded-xl border border-white/20 bg-white/10 px-4 py-2.5 text-sm font-medium transition hover:bg-white/15"
             >
               Choose {plan.name}
-            </a>
+            </Link>
           </motion.article>
         ))}
       </motion.div>

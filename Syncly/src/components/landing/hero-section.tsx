@@ -21,7 +21,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-balance text-4xl font-semibold tracking-tight text-white sm:text-6xl"
+          className="bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-balance text-4xl font-semibold tracking-tight text-transparent sm:text-6xl"
         >
           Workflow orchestration, harmonized.
         </motion.h1>

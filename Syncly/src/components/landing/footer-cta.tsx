@@ -1,9 +1,33 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { AnimatedSection } from "./animated-section";
 
 export function FooterCta() {
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  const handleRequestEarlyAccess = async () => {
+    if (status === "loading") return;
+    setStatus("loading");
+
+    try {
+      await new Promise<void>((resolve, reject) => {
+        setTimeout(() => {
+          if (Math.random() < 0.9) {
+            resolve();
+            return;
+          }
+          reject(new Error("Temporary network issue"));
+        }, 900);
+      });
+
+      setStatus("success");
+    } catch {
+      setStatus("error");
+    }
+  };
+
   return (
     <AnimatedSection id="waitlist" className="section-shell relative z-10 pb-16 pt-12 sm:pt-16">
       <motion.div
@@ -19,14 +43,24 @@ export function FooterCta() {
           <p className="mx-auto mt-4 max-w-xl text-zinc-300">
             Be the first to access a unified workflow platform designed for modern global teams.
           </p>
-          <motion.a
-            href="#"
+          <motion.button
+            type="button"
+            onClick={handleRequestEarlyAccess}
+            disabled={status === "loading"}
             className="mt-8 inline-flex rounded-xl bg-white px-6 py-3 text-sm font-medium text-black transition hover:bg-zinc-200"
             whileHover={{ y: -2, scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
           >
-            Request Early Access
-          </motion.a>
+            {status === "loading" ? "Sending request..." : "Request Early Access"}
+          </motion.button>
+          {status === "success" ? (
+            <p className="mt-3 text-sm text-emerald-300">Request sent. We&apos;ll reach out soon.</p>
+          ) : null}
+          {status === "error" ? (
+            <p className="mt-3 text-sm text-rose-300">
+              Request failed. Please try again in a moment.
+            </p>
+          ) : null}
         </div>
       </motion.div>
     </AnimatedSection>

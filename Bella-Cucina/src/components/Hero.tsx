@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import bellaCucinaLogo from '../assets/bella cucina logo transparent.png';
+import bellaCucinaLogo from '../assets/bella-cucina-logo-transparent.png';
 import './Hero.css';
 
 const Hero = () => {
