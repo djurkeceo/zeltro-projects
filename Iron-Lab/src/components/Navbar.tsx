@@ -23,10 +23,10 @@ const Navbar: React.FC = () => {
         </div>
 
         <ul className={`nav-links ${isMobileMenuOpen ? 'open' : ''}`}>
-          <li><a href="#programs" onClick={() => setIsMobileMenuOpen(false)}>Programs</a></li>
-          <li><a href="#trainers" onClick={() => setIsMobileMenuOpen(false)}>Trainers</a></li>
-          <li><a href="#pricing" onClick={() => setIsMobileMenuOpen(false)}>Pricing</a></li>
-          <li><a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>Contact</a></li>
+          <li><a href="/#programs" onClick={() => setIsMobileMenuOpen(false)}>Programs</a></li>
+          <li><a href="/#trainers" onClick={() => setIsMobileMenuOpen(false)}>Trainers</a></li>
+          <li><a href="/#pricing" onClick={() => setIsMobileMenuOpen(false)}>Pricing</a></li>
+          <li><a href="/#contact" onClick={() => setIsMobileMenuOpen(false)}>Contact</a></li>
           <li className="mobile-cta">
             <button className="btn-primary">Join Now</button>
           </li>

@@ -58,7 +58,7 @@ const Programs: React.FC = () => {
             <div className="program-icon">{program.icon}</div>
             <h3 className="program-title">{program.title}</h3>
             <p className="program-desc">{program.desc}</p>
-            <a href="#" className="program-link">Learn More &rarr;</a>
+            <a href="/gallery" className="program-link">Learn More &rarr;</a>
           </motion.div>
         ))}
       </div>

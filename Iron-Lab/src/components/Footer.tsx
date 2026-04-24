@@ -25,10 +25,10 @@ const Footer: React.FC = () => {
         <div className="footer-links">
           <h3>Quick Links</h3>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#programs">Programs</a></li>
-            <li><a href="#trainers">Trainers</a></li>
-            <li><a href="#pricing">Membership</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/#programs">Programs</a></li>
+            <li><a href="/#trainers">Trainers</a></li>
+            <li><a href="/#pricing">Membership</a></li>
           </ul>
         </div>
 

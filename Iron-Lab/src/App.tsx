@@ -6,23 +6,32 @@ import Programs from './components/Programs';
 import Trainers from './components/Trainers';
 import Membership from './components/Membership';
 import Footer from './components/Footer';
+import Gallery from './components/Gallery';
 
 const App: React.FC = () => {
+  const isGalleryPage = window.location.pathname === '/gallery';
+
   return (
     <div className="app-container">
       <Navbar />
       <main>
-        <Hero />
-        <Stats />
-        <section id="programs">
-          <Programs />
-        </section>
-        <section id="trainers">
-          <Trainers />
-        </section>
-        <section id="pricing">
-          <Membership />
-        </section>
+        {isGalleryPage ? (
+          <Gallery />
+        ) : (
+          <>
+            <Hero />
+            <Stats />
+            <section id="programs">
+              <Programs />
+            </section>
+            <section id="trainers">
+              <Trainers />
+            </section>
+            <section id="pricing">
+              <Membership />
+            </section>
+          </>
+        )}
       </main>
       <Footer />
     </div>
