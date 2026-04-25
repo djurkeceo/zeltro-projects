@@ -59,11 +59,6 @@ const Hero: React.FC = () => {
         </motion.div>
       </div>
 
-      <div className="hero-scroll-indicator">
-        <div className="mouse">
-          <div className="wheel"></div>
-        </div>
-      </div>
     </section>
   );
 };
