@@ -10,21 +10,34 @@ import './Home.css';
 const Home: React.FC = () => {
   useEffect(() => {
     setPageMeta({
-      title: "Studio Noir | Premium Frizerski Salon Beograd",
-      description: "Otkrijte umetnost lepote u Studio Noir. Premium frizerski salon u Beogradu specijalizovan za balayage i moderne tehnike šišanja."
+      title: "Studio Noir | Premium Kozmetički Salon Beograd",
+      description: "Otkrijte umetnost lepote u Studio Noir. Premium Kozmetički Salon u Beogradu specijalizovan za balayage i moderne tehnike šišanja."
     });
   }, []);
 
   const services = [
-    { name: 'Šišanje & Styling', desc: 'Precizni rezovi prilagođeni vašem obliku lica.', price: 'Od 2.500 RSD' },
-    { name: 'Boja & Pramenovi', desc: 'Vrhunski koloristi i najsavremenije tehnike.', price: 'Od 6.000 RSD' },
-    { name: 'Tretmani & Nega', desc: 'Dubinska hidratacija i regeneracija vaše kose.', price: 'Od 2.000 RSD' },
+    { name: 'Laserska operacija', desc: '', price: 'Od 1.000 RSD' },
+    { name: 'Tretmani tela i masaže', desc: '', price: 'Od 1.700 RSD' },
+    { name: 'Manikir i predikir', desc: '', price: 'Od 2.000 RSD' },
+    { name: 'Depilacija', desc: '', price: 'Od 400 RSD' },
   ];
 
   const testimonials = [
-    { name: 'Jelena M.', text: 'Najbolji balayage u gradu! Atmosfera je neverovatna, a tim profesionalan.' },
-    { name: 'Milica S.', text: 'Obožavam ritual pranja kose ovde. Pravi trenutak opuštanja u toku dana.' },
-    { name: 'Ana P.', text: 'Studio Noir je jedino mesto gde verujem da će mi kosa izgledati savršeno.' },
+    {
+      name: 'Ana Pavlović',
+      text: 'Sve preporuke za salon, veoma prijatno iskustvo, higijena i usluga su na visokom nivou.',
+      date: 'Pre 4 meseca'
+    },
+    {
+      name: 'Jovana Mladenovic',
+      text: 'Odlična usluga, veoma profesionalan rad i prijatna atmosfera!',
+      date: 'Pre godinu dana'
+    },
+    {
+      name: 'Todor Kljajic',
+      text: 'Osoblje je ljubazno i profesionalno, salon je čist i uredan, a odnos cene i kvaliteta je odličan. Sve preporuke.',
+      date: 'Pre 3 godine'
+    },
   ];
 
   return (
@@ -46,7 +59,7 @@ const Home: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            PREMIUM HAIR STUDIO
+            PREMIUM COSMETICS STUDIO
           </motion.span>
           
           <motion.h1 
@@ -88,13 +101,6 @@ const Home: React.FC = () => {
           </motion.div>
         </div>
 
-        <motion.div 
-          className="scroll-indicator"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ repeat: Infinity, duration: 2 }}
-        >
-          <div className="chevron"></div>
-        </motion.div>
       </section>
 
       {/* SECTION 2: ABOUT */}
@@ -122,9 +128,9 @@ const Home: React.FC = () => {
               transition={{ duration: 0.8 }}
             >
               <span className="eyebrow">O NAMA</span>
-              <h2>Više od frizure — to je ritual.</h2>
-              <p>Studio Noir je premium frizerski salon u srcu Beograda, osnovan sa jednom misijom — da svaka klijentka izađe osećajući se kao najlepša verzija sebe.</p>
-              <p>Naš tim iskusnih stilista kombinuje savremene tehnike i vrhunske proizvode kako bi stvorio izgled koji traje.</p>
+              <h2>Više od tretmana — to je ritual.</h2>
+              <p>Studio Noir je premium kozmetički salon u srcu Beograda, osnovan sa jednom misijom — da svaka klijentkinja izađe osećajući se negovano, osveženo i kao najlepša verzija sebe.</p>
+              <p>Naš tim iskusnih kozmetičara kombinuje savremene tretmane i vrhunske proizvode kako bi pružio rezultate koji traju.</p>
               <blockquote className="gold-quote">
                 „Lepota nije privilegija — to je umetnost."
               </blockquote>
@@ -152,7 +158,7 @@ const Home: React.FC = () => {
               >
                 <div className="service-icon">✦</div>
                 <h3>{s.name}</h3>
-                <p>{s.desc}</p>
+                {s.desc && <p>{s.desc}</p>}
                 <span className="price">{s.price}</span>
                 <Link to="/services" className="details-link">Detalji →</Link>
               </motion.div>
@@ -181,6 +187,7 @@ const Home: React.FC = () => {
                 <p className="testimonial-text">{t.text}</p>
                 <div className="stars">★★★★★</div>
                 <p className="client-name">{t.name}</p>
+                <p className="client-time">{t.date}</p>
               </motion.div>
             ))}
           </div>

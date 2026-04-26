@@ -1,45 +1,47 @@
-import React, { Suspense } from 'react';
-import { createBrowserRouter } from 'react-router-dom';
+import React from 'react';
+import { createBrowserRouter, isRouteErrorResponse, useRouteError } from 'react-router-dom';
 import App from './App';
+import Home from './pages/Home';
+import Services from './pages/Services';
+import Gallery from './pages/Gallery';
 
-const Home = React.lazy(() => import('./pages/Home'));
-const Services = React.lazy(() => import('./pages/Services'));
-const Gallery = React.lazy(() => import('./pages/Gallery'));
+const RouteErrorBoundary: React.FC = () => {
+  const error = useRouteError();
+  let message = 'Došlo je do neočekivane greške.';
 
-const PageLoader = () => (
-  <div className="page-loader">
-    <div className="loader-spinner"></div>
-  </div>
-);
+  if (isRouteErrorResponse(error)) {
+    message = `${error.status} ${error.statusText}`;
+  } else if (error instanceof Error && error.message) {
+    message = error.message;
+  }
+
+  return (
+    <div className="page-loader">
+      <div style={{ textAlign: 'center', color: 'var(--white)', padding: '0 20px' }}>
+        <h2 style={{ marginBottom: '12px' }}>Greška pri učitavanju stranice</h2>
+        <p>{message}</p>
+      </div>
+    </div>
+  );
+};
 
 export const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
+    errorElement: <RouteErrorBoundary />,
     children: [
       {
         index: true,
-        element: (
-          <Suspense fallback={<PageLoader />}>
-            <Home />
-          </Suspense>
-        ),
+        element: <Home />,
       },
       {
         path: 'services',
-        element: (
-          <Suspense fallback={<PageLoader />}>
-            <Services />
-          </Suspense>
-        ),
+        element: <Services />,
       },
       {
         path: 'gallery',
-        element: (
-          <Suspense fallback={<PageLoader />}>
-            <Gallery />
-          </Suspense>
-        ),
+        element: <Gallery />,
       },
     ],
   },

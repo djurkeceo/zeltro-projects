@@ -201,8 +201,14 @@
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 30px;
+}
+
+@media (max-width: 1200px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 992px) {
@@ -313,5 +319,12 @@
   font-size: 13px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
+  color: var(--gray-400);
+}
+
+.client-time {
+  margin-top: 6px;
+  font-family: var(--font-body);
+  font-size: 12px;
   color: var(--gray-400);
 }

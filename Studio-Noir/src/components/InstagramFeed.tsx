@@ -18,7 +18,7 @@ const InstagramFeed: React.FC = () => {
     <section className="instagram-section">
       <div className="insta-header">
         <span className="eyebrow">PRATITE NAS</span>
-        <h2 className="insta-handle">@studionoir.beograd</h2>
+        <h2 className="insta-handle">@kozmeticki_studio_noir</h2>
       </div>
 
       <div className="insta-grid">
@@ -42,7 +42,14 @@ const InstagramFeed: React.FC = () => {
       </div>
 
       <div className="insta-footer">
-        <a href="#" className="insta-cta">PRATITE NA INSTAGRAMU</a>
+        <a
+          href="https://www.instagram.com/kozmeticki_studio_noir/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="insta-cta"
+        >
+          PRATITE NA INSTAGRAMU
+        </a>
       </div>
     </section>
   );
