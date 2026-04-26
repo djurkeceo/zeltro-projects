@@ -1,0 +1,130 @@
+.footer {
+  background-color: var(--black);
+  color: var(--white);
+  padding: 80px 0 0;
+  border-top: 1px solid var(--accent);
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px 60px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.5fr;
+  gap: 80px;
+}
+
+@media (max-width: 992px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.footer-logo {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  letter-spacing: 0.2em;
+  margin-bottom: 20px;
+}
+
+.footer-tagline {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--gray-400);
+  line-height: 1.6;
+  max-width: 300px;
+  margin-bottom: 24px;
+}
+
+.footer-social {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--gray-800);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  transition: var(--transition);
+}
+
+.social-icon:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-3px);
+}
+
+.footer-col h3 {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  margin-bottom: 30px;
+  color: var(--accent);
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+  color: var(--gray-400);
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+  color: var(--white);
+}
+
+.footer-col p {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--gray-400);
+  margin-bottom: 10px;
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--gray-800);
+  padding: 25px 0;
+}
+
+.footer-bottom-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--gray-600);
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 600px) {
+  .footer-bottom-container {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    text-align: center;
+  }
+}
