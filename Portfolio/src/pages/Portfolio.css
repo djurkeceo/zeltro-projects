@@ -1,62 +1,51 @@
 .portfolio-hero {
-  height: 40vh;
-  background-color: var(--black);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  padding-top: 80px;
+  border-bottom: 1px solid var(--line);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0)),
+    radial-gradient(circle at 80% 10%, rgba(215, 184, 138, 0.18), rgba(0, 0, 0, 0) 40%);
 }
 
-.portfolio-hero .hero-label {
-  display: block;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.2em;
-  color: var(--accent);
-  margin-bottom: 1rem;
+.portfolio-hero-content {
+  padding-top: 5rem;
+  padding-bottom: 4rem;
 }
 
 .portfolio-hero .hero-title {
-  font-size: clamp(3rem, 6vw, 5rem);
-  font-style: italic;
-  font-weight: 300;
+  max-width: 14ch;
   margin-bottom: 1rem;
+  font-size: clamp(2.3rem, 6vw, 4.4rem);
 }
 
 .portfolio-hero .hero-subtext {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0.15em;
-  color: var(--gray-400);
-  text-transform: uppercase;
+  color: var(--text-muted);
+  max-width: 56ch;
 }
 
 .portfolio-filters {
-  position: relative;
-  background-color: var(--warm-white);
-  padding: 1.5rem 0;
-  border-bottom: 1px solid var(--gray-200);
+  position: sticky;
+  top: 84px;
+  z-index: 20;
+  backdrop-filter: blur(10px);
+  background: rgba(11, 11, 16, 0.72);
+  border-bottom: 1px solid var(--line);
 }
 
 .filters-container {
   display: flex;
-  justify-content: center;
+  gap: 0.65rem;
   flex-wrap: wrap;
-  gap: 0.8rem;
+  padding: 1rem 1.5rem;
 }
 
 .filter-pill {
-  padding: 0.6rem 1.2rem;
-  border-radius: 30px;
-  border: 1px solid var(--gray-200);
+  border: 1px solid var(--line);
+  color: var(--text-muted);
+  border-radius: 999px;
+  padding: 0.52rem 0.95rem;
   font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.05em;
+  font-size: 0.69rem;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--gray-600);
-  background-color: transparent;
   transition: var(--transition);
 }
 
@@ -66,41 +55,33 @@
 }
 
 .filter-pill.active {
-  background-color: var(--black);
-  color: white;
-  border-color: var(--black);
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #171311;
 }
 
-.filter-pill .count {
-  font-size: 9px;
-  opacity: 0.6;
-  margin-left: 4px;
+.count {
+  margin-left: 0.2rem;
+  opacity: 0.85;
 }
 
 .portfolio-grid-section {
-  padding-top: 60px;
-  min-height: 800px;
+  min-height: 50vh;
 }
 
 @media (max-width: 768px) {
-  .portfolio-hero {
-    height: 30vh;
+  .portfolio-hero-content {
+    padding-top: 4rem;
+    padding-bottom: 2.8rem;
   }
-  
+
   .portfolio-filters {
-    padding: 1rem 0;
+    top: 80px;
   }
-  
+
   .filters-container {
-    justify-content: flex-start;
     overflow-x: auto;
     white-space: nowrap;
-    padding-bottom: 0.5rem;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-  
-  .filters-container::-webkit-scrollbar {
-    display: none;
+    flex-wrap: nowrap;
   }
 }

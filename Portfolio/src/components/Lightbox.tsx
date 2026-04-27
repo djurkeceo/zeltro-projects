@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useKeyboard } from '../hooks/useKeyboard';
+import { getOptimizedUrl } from '../utils/imageLoader';
 import { Photo } from '../utils/photos';
 import './Lightbox.css';
 
@@ -17,6 +18,12 @@ const Lightbox: React.FC<LightboxProps> = ({ isOpen, photos, currentIndex, onClo
   useKeyboard({ onLeft: onPrev, onRight: onNext, onEscape: onClose }, isOpen);
 
   const currentPhoto = photos[currentIndex];
+  const lightboxSrc = getOptimizedUrl(currentPhoto.src, 1800, 82);
+  const lightboxSrcSet = currentPhoto.src.includes('unsplash.com')
+    ? [1200, 1800, 2400]
+        .map((width) => `${getOptimizedUrl(currentPhoto.src, width, width <= 1800 ? 82 : 78)} ${width}w`)
+        .join(', ')
+    : undefined;
 
   if (!isOpen) return null;
 
@@ -37,12 +44,15 @@ const Lightbox: React.FC<LightboxProps> = ({ isOpen, photos, currentIndex, onClo
           <div className="lightbox-content">
             <motion.img
               key={currentPhoto.id}
-              src={currentPhoto.src}
+              src={lightboxSrc}
+              srcSet={lightboxSrcSet}
+              sizes="90vw"
               alt={currentPhoto.alt}
               className="lightbox-image"
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.3 }}
+              decoding="async"
             />
 
             <div className="lightbox-metadata">

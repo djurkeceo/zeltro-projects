@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { useInView } from '../hooks/useInView';
 import { useImageLoad } from '../hooks/useImageLoad';
+import { getOptimizedUrl } from '../utils/imageLoader';
 import ImageSkeleton from './ImageSkeleton';
 import './LazyImage.css';
 
@@ -15,7 +16,13 @@ interface LazyImageProps {
 const LazyImage: React.FC<LazyImageProps> = ({ src, alt, className = '', aspectRatio, onClick }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(containerRef, { once: true });
-  const { loaded, error } = useImageLoad(isInView ? src : '');
+  const optimizedSrc = getOptimizedUrl(src, 1200, 75);
+  const optimizedSrcSet = src.includes('unsplash.com')
+    ? [480, 768, 1200, 1600]
+        .map((width) => `${getOptimizedUrl(src, width, width <= 768 ? 70 : 75)} ${width}w`)
+        .join(', ')
+    : undefined;
+  const { loaded, error } = useImageLoad(isInView ? optimizedSrc : '');
 
   // Format aspect ratio for CSS
   const cssAspectRatio = aspectRatio ? aspectRatio.replace('/', ' / ') : 'auto';
@@ -37,10 +44,13 @@ const LazyImage: React.FC<LazyImageProps> = ({ src, alt, className = '', aspectR
 
       {isInView && !error && (
         <img
-          src={src}
+          src={optimizedSrc}
+          srcSet={optimizedSrcSet}
+          sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
           alt={alt}
           className={`lazy-image ${loaded ? 'visible' : 'hidden'}`}
           loading="lazy"
+          decoding="async"
         />
       )}
     </div>

@@ -28,9 +28,9 @@ const ContactForm: React.FC = () => {
             exit={{ opacity: 0, y: -20 }}
           >
             <div className="success-icon">✓</div>
-            <h3>Poruka je poslata!</h3>
-            <p>Javljam se uskoro.</p>
-            <button className="btn btn-outline" onClick={() => setStatus('idle')}>Pošalji ponovo</button>
+            <h3>Message sent!</h3>
+            <p>I will get back to you shortly.</p>
+            <button className="btn btn-outline" onClick={() => setStatus('idle')}>Send another request</button>
           </motion.div>
         ) : (
           <motion.form 
@@ -43,28 +43,28 @@ const ContactForm: React.FC = () => {
             <div className="form-row">
               <div className="form-group">
                 <input type="text" id="name" required placeholder=" " />
-                <label htmlFor="name">Ime i Prezime</label>
+                <label htmlFor="name">Full name</label>
               </div>
               <div className="form-group">
                 <input type="email" id="email" required placeholder=" " />
-                <label htmlFor="email">Email Adresa</label>
+                <label htmlFor="email">Email address</label>
               </div>
             </div>
 
             <div className="form-row">
               <div className="form-group">
                 <input type="tel" id="phone" placeholder=" " />
-                <label htmlFor="phone">Telefon</label>
+                <label htmlFor="phone">Phone</label>
               </div>
               <div className="form-group">
                 <select id="type" required defaultValue="">
-                  <option value="" disabled>Vrsta sesije</option>
-                  <option value="portret">Portretna</option>
+                  <option value="" disabled>Session type</option>
+                  <option value="portrait">Portrait</option>
                   <option value="wedding">Wedding</option>
-                  <option value="porodicna">Porodična</option>
-                  <option value="editorijal">Editorijal</option>
+                  <option value="family">Family</option>
+                  <option value="editorial">Editorial</option>
                   <option value="brand">Brand</option>
-                  <option value="other">Nešto drugo</option>
+                  <option value="other">Other</option>
                 </select>
               </div>
             </div>
@@ -72,26 +72,26 @@ const ContactForm: React.FC = () => {
             <div className="form-row">
               <div className="form-group">
                 <input type="date" id="date" placeholder=" " />
-                <label htmlFor="date">Željeni datum</label>
+                <label htmlFor="date">Preferred date</label>
               </div>
               <div className="form-group">
                 <select id="budget" required defaultValue="">
-                  <option value="" disabled>Okvirni budžet</option>
-                  <option value="150">Do €150</option>
+                  <option value="" disabled>Estimated budget</option>
+                  <option value="150">Up to €150</option>
                   <option value="300">€150 – €300</option>
                   <option value="600">€300 – €600</option>
-                  <option value="1000">Više od €600</option>
+                  <option value="1000">Above €600</option>
                 </select>
               </div>
             </div>
 
             <div className="form-group">
               <textarea id="message" rows={4} required placeholder=" "></textarea>
-              <label htmlFor="message">Vaša poruka</label>
+              <label htmlFor="message">Your message</label>
             </div>
 
             <button type="submit" className="btn btn-primary submit-btn" disabled={status === 'submitting'}>
-              {status === 'submitting' ? 'Slanje...' : 'Pošalji Upit'}
+              {status === 'submitting' ? 'Sending...' : 'Send inquiry'}
             </button>
           </motion.form>
         )}

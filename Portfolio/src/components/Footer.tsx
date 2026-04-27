@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
         <div className="footer-grid">
           <div className="footer-col footer-brand">
             <Link to="/" className="footer-logo">L · M</Link>
-            <p className="footer-tagline">Hvatam trenutke koji traju.</p>
+            <p className="footer-tagline">Story-driven photography for modern couples, creatives, and brands.</p>
             <div className="social-links">
               <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
@@ -24,29 +24,29 @@ const Footer: React.FC = () => {
           </div>
 
           <div className="footer-col">
-            <h4 className="footer-heading">Stranice</h4>
+            <h4 className="footer-heading">Explore</h4>
             <ul className="footer-links">
-              <li><Link to="/">Početna</Link></li>
-              <li><Link to="/portfolio">Galerija</Link></li>
-              <li><Link to="/about">O Meni</Link></li>
-              <li><Link to="/about#contact">Kontakt</Link></li>
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/portfolio">Portfolio</Link></li>
+              <li><Link to="/about">About</Link></li>
+              <li><Link to="/about#contact">Contact</Link></li>
             </ul>
           </div>
 
           <div className="footer-col">
-            <h4 className="footer-heading">Kontakt</h4>
+            <h4 className="footer-heading">Contact</h4>
             <ul className="footer-info">
-              <li>lena@lenamarkovic.rs</li>
+              <li>hello@lenamarkovic.rs</li>
               <li>+381 60 123 4567</li>
-              <li>Beograd, Srbija</li>
-              <li>@lena.markovic.foto</li>
+              <li>Belgrade, Serbia</li>
+              <li>@lena.markovic.photo</li>
             </ul>
           </div>
         </div>
 
         <div className="footer-bottom">
-          <p>© 2025 Lena Marković Fotografija · Sva prava zadržana</p>
-          <p className="footer-credit">Dizajnirano sa ♥ u Beogradu</p>
+          <p>© 2026 Lena Markovic Photography</p>
+          <p className="footer-credit">Available worldwide</p>
         </div>
       </div>
     </footer>

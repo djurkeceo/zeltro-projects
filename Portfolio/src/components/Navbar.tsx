@@ -25,18 +25,15 @@ const Navbar: React.FC = () => {
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  const isDarkHeroPage = location.pathname === '/about' || location.pathname === '/portfolio';
-  const useLightText = isDarkHeroPage && !scrolled;
-
   const navLinks = [
-    { name: 'Početna', path: '/', label: '01' },
-    { name: 'Galerija', path: '/portfolio', label: '02' },
-    { name: 'O Meni', path: '/about', label: '03' }
+    { name: 'Home', path: '/', label: '01' },
+    { name: 'Portfolio', path: '/portfolio', label: '02' },
+    { name: 'About', path: '/about', label: '03' }
   ];
 
   return (
     <motion.nav 
-      className={`navbar ${scrolled ? 'scrolled' : ''} ${isOpen ? 'menu-open' : ''} ${useLightText ? 'light-mode' : ''}`}
+      className={`navbar ${scrolled ? 'scrolled' : ''} ${isOpen ? 'menu-open' : ''}`}
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
@@ -44,27 +41,24 @@ const Navbar: React.FC = () => {
       <div className="container nav-container">
         <Link to="/" className="logo">
           <div className="logo-main">L <span className="dot">·</span> M</div>
-          <div className="logo-sub">FOTOGRAFKINJA</div>
+          <div className="logo-sub">PHOTOGRAPHY</div>
         </Link>
 
-        {/* Desktop Nav */}
         <div className="desktop-nav">
           {navLinks.map((link) => (
             <NavLink key={link.path} to={link.path} className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
               {link.name}
             </NavLink>
           ))}
-          <Link to="/about#contact" className="btn btn-outline nav-cta">Zakaži Sesiju</Link>
+          <Link to="/about#contact" className="btn btn-primary nav-cta">Book a Session</Link>
         </div>
 
-        {/* Hamburger */}
         <button className={`hamburger ${isOpen ? 'active' : ''}`} onClick={toggleMenu} aria-label="Menu">
           <span className="line line-1"></span>
           <span className="line line-2"></span>
         </button>
       </div>
 
-      {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {isOpen && (
           <motion.div 
@@ -93,7 +87,7 @@ const Navbar: React.FC = () => {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.4, duration: 0.5 }}
               >
-                <Link to="/about#contact" className="btn btn-outline-white mobile-cta">Zakaži Sesiju</Link>
+                <Link to="/about#contact" className="btn btn-primary mobile-cta">Book a Session</Link>
               </motion.div>
             </div>
           </motion.div>

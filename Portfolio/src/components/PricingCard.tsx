@@ -24,11 +24,11 @@ const PricingCard: React.FC<PricingCardProps> = ({ title, price, features, featu
         delay 
       }}
     >
-      {featured && <span className="featured-badge">NAJPOPULARNIJE</span>}
+      {featured && <span className="featured-badge">MOST BOOKED</span>}
       <h3 className="card-title">{title}</h3>
       <div className="card-price">
+        <span className="currency">€</span>
         <span className="amount">{price}</span>
-        <span className="currency">RSD</span>
       </div>
       <ul className="card-features">
         {features.map((feature, i) => (
@@ -36,7 +36,7 @@ const PricingCard: React.FC<PricingCardProps> = ({ title, price, features, featu
         ))}
       </ul>
       <button className={`btn ${featured ? 'btn-primary' : 'btn-outline'} card-btn`}>
-        Zakaži Sesiju
+        Inquire Now
       </button>
     </motion.div>
   );
