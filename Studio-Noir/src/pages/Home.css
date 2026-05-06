@@ -276,42 +276,44 @@
   color: var(--white);
 }
 
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+.testimonials .section-header h2 {
+  color: var(--white);
 }
 
-@media (max-width: 992px) {
-  .testimonials-grid {
-    grid-template-columns: 1fr;
-  }
+.testimonials-marquee {
+  position: relative;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent 0, black 6%, black 94%, transparent 100%);
+}
+
+.testimonials-track {
+  display: flex;
+  align-items: stretch;
+  gap: 24px;
+  width: max-content;
+  animation: reviews-scroll 95s linear infinite;
 }
 
 .testimonial-item {
-  text-align: center;
-}
-
-.quote-mark {
-  font-family: var(--font-heading);
-  font-size: 60px;
-  color: var(--accent);
-  line-height: 1;
-  margin-bottom: 10px;
+  width: min(360px, 85vw);
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 28px 24px;
+  border-radius: 10px;
 }
 
 .testimonial-text {
   font-family: var(--font-heading);
-  font-size: 20px;
+  font-size: 19px;
   font-style: italic;
   line-height: 1.6;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 .stars {
   color: var(--accent);
-  letter-spacing: 5px;
-  margin-bottom: 15px;
+  letter-spacing: 4px;
+  margin-bottom: 14px;
 }
 
 .client-name {
@@ -319,12 +321,27 @@
   font-size: 13px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--gray-400);
+  color: var(--white);
 }
 
-.client-time {
-  margin-top: 6px;
+.review-meta {
+  margin-top: 7px;
   font-family: var(--font-body);
   font-size: 12px;
   color: var(--gray-400);
+}
+
+@keyframes reviews-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .testimonials-track {
+    animation: none;
+  }
 }

@@ -22,23 +22,104 @@ const Home: React.FC = () => {
     { name: 'Depilacija', desc: '', price: 'Od 400 RSD' },
   ];
 
-  const testimonials = [
+  const reviews = [
     {
-      name: 'Ana Pavlović',
-      text: 'Sve preporuke za salon, veoma prijatno iskustvo, higijena i usluga su na visokom nivou.',
-      date: 'Pre 4 meseca'
+      name: 'Kalina Trifunovic',
+      meta: '3 reviews · a year ago',
+      text: 'Clean, nice atmosphere, relaxing, not stressful. I’m excited to go there every time!'
     },
     {
-      name: 'Jovana Mladenovic',
-      text: 'Odlična usluga, veoma profesionalan rad i prijatna atmosfera!',
-      date: 'Pre godinu dana'
+      name: 'Ana Pavlović',
+      meta: '3 reviews · 5 months ago',
+      text: 'All recommendations for the salon, very pleasant experience, hygiene and service at a high level.'
+    },
+    {
+      name: 'Ana M',
+      meta: '8 reviews · 1 photo · 3 years ago',
+      text: 'The girls do an excellent job! The quality of service and cosmetics is at a high level. All praise.'
     },
     {
       name: 'Todor Kljajic',
-      text: 'Osoblje je ljubazno i profesionalno, salon je čist i uredan, a odnos cene i kvaliteta je odličan. Sve preporuke.',
-      date: 'Pre 3 godine'
+      meta: '8 reviews · 1 photo · 3 years ago',
+      text: 'Staff friendly and professional. The place is clean and tidy. Excellent value for money. For every recommendation.'
+    },
+    {
+      name: 'Vesna Ćalasan',
+      meta: '3 reviews · 2 years ago',
+      text: 'Great staff and service! Quality cosmetics. Clear! All recommendations!'
+    },
+    {
+      name: 'Jovana Mladenovic',
+      meta: '4 reviews · a year ago',
+      text: 'Excellent service, very professional work and a pleasant atmosphere!'
+    },
+    {
+      name: 'Gorana G',
+      meta: 'Local Guide · 18 reviews · 21 photos · 2 years ago',
+      text: 'Excellent service, clean and tidy, professional and pleasant ladies.'
+    },
+    {
+      name: 'Drazenka Petrovic',
+      meta: '4 reviews · 4 photos · 3 years ago',
+      text: 'A salon to recommend. Quality cosmetics and professional staff.... Congratulations.'
+    },
+    {
+      name: 'Danica Matic',
+      meta: '1 review · 3 years ago',
+      text: 'Beautiful ambience, phenomenal and professional service, with high quality cosmetics! All recommendations!!!'
+    },
+    {
+      name: 'Невена Познановић',
+      meta: 'Local Guide · 17 reviews · 4 photos · a year ago',
+      text: 'All praise, real sugar paste.'
+    },
+    {
+      name: 'Dragoslav Seatovic',
+      meta: '27 reviews · 5 months ago',
+      text: 'Rated the salon.'
+    },
+    {
+      name: 'Dragana Jevtić',
+      meta: '3 reviews · 5 months ago',
+      text: 'Rated the salon.'
+    },
+    {
+      name: 'Sanja Rakic',
+      meta: '1 review · 8 months ago',
+      text: 'Rated the salon.'
+    },
+    {
+      name: 'Milena Latinovic',
+      meta: '4 reviews · 1 photo · a year ago',
+      text: 'Rated the salon.'
+    },
+    {
+      name: 'Ана Петровић',
+      meta: '3 reviews · 2 photos · a year ago',
+      text: 'Rated the salon.'
+    },
+    {
+      name: 'Olga M.',
+      meta: 'Local Guide · 12 reviews · 4 photos · a year ago',
+      text: 'Rated the salon.'
+    },
+    {
+      name: 'Isidora Lakicevic',
+      meta: 'Local Guide · 10 reviews · 7 photos · 2 years ago',
+      text: 'Rated the salon.'
+    },
+    {
+      name: 'Marija Srdich',
+      meta: 'Local Guide · 11 reviews · 2 years ago',
+      text: 'Rated the salon.'
+    },
+    {
+      name: 'Danijela Jovanovic',
+      meta: '3 years ago',
+      text: 'Rated the salon.'
     },
   ];
+  const duplicatedReviews = [...reviews, ...reviews];
 
   return (
     <div className="home-page">
@@ -173,23 +254,22 @@ const Home: React.FC = () => {
       {/* SECTION 5: TESTIMONIALS */}
       <section className="testimonials">
         <div className="container">
-          <div className="testimonials-grid">
-            {testimonials.map((t, i) => (
-              <motion.div 
-                key={i}
-                className="testimonial-item"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.2 }}
-              >
-                <div className="quote-mark">“</div>
-                <p className="testimonial-text">{t.text}</p>
-                <div className="stars">★★★★★</div>
-                <p className="client-name">{t.name}</p>
-                <p className="client-time">{t.date}</p>
-              </motion.div>
-            ))}
+          <div className="section-header">
+            <span className="eyebrow">RECENZIJE</span>
+            <h2>Šta klijenti kažu o nama</h2>
+          </div>
+
+          <div className="testimonials-marquee" aria-label="Client reviews">
+            <div className="testimonials-track">
+              {duplicatedReviews.map((review, index) => (
+                <article className="testimonial-item" key={`${review.name}-${index}`}>
+                  <div className="stars">★★★★★</div>
+                  <p className="testimonial-text">“{review.text}”</p>
+                  <p className="client-name">{review.name}</p>
+                  <p className="review-meta">{review.meta}</p>
+                </article>
+              ))}
+            </div>
           </div>
         </div>
       </section>
