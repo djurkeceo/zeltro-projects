@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import bellaCucinaLogo from '../assets/bella-cucina-logo-transparent.png';
+import bellaCucinaLogo from '../assets/bella-cucina-logo-transparent-1200.png';
 import './Hero.css';
 
 const Hero = () => {
@@ -17,6 +17,11 @@ const Hero = () => {
           src={bellaCucinaLogo}
           alt="Bella Cucina logo"
           className="hero-logo-art"
+          width={1200}
+          height={422}
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
         />
         <div className="hero-btns">
           <motion.a
