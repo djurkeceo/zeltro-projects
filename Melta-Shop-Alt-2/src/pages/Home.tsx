@@ -11,10 +11,7 @@ import { fadeUp } from '../utils/motion';
 import './Home.css';
 
 export default function Home() {
-  useDocumentTitle(
-    '',
-    'METAL SHOP d.o.o. — proizvodnja, maloprodaja i veleprodaja metalne robe u Subotici od 2006.'
-  );
+  useDocumentTitle('');
   const prefersReducedMotion = useReducedMotion();
 
   return (
