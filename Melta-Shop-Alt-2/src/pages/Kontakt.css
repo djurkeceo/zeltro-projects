@@ -1,0 +1,89 @@
+.contact-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3rem;
+}
+
+.contact-info h2,
+.contact-departments h2 {
+  font-size: 1.25rem;
+  color: var(--color-primary);
+  margin-bottom: 1.25rem;
+}
+
+.contact-info address {
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.contact-info address p {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.contact-info a:hover {
+  color: var(--color-accent);
+}
+
+.dept-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.dept-card {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-top: 3px solid var(--color-accent);
+  padding: 1.25rem;
+}
+
+.dept-card h3 {
+  font-size: 0.95rem;
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+}
+
+.dept-card p {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.dept-card a {
+  color: var(--color-primary);
+}
+
+.dept-card a:hover {
+  color: var(--color-accent);
+}
+
+.contact-form-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.contact-map .section-title {
+  margin-bottom: 1rem;
+}
+
+.contact-map iframe {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+
+@media (max-width: 900px) {
+  .contact-info-grid,
+  .contact-form-section {
+    grid-template-columns: 1fr;
+  }
+
+  .dept-cards {
+    grid-template-columns: 1fr;
+  }
+}

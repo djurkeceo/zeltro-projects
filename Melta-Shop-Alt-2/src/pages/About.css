@@ -1,0 +1,39 @@
+.about-story {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.about-story__text p {
+  color: var(--color-text-muted);
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+.about-story__text strong {
+  color: var(--color-primary);
+}
+
+.about-story__placeholder {
+  aspect-ratio: 16/10;
+  background: linear-gradient(160deg, #2a3f5f 0%, var(--color-primary) 100%);
+  display: flex;
+  align-items: flex-end;
+  padding: 1.5rem;
+  border-top: 4px solid var(--color-accent);
+}
+
+.about-story__placeholder span {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-silver-light);
+}
+
+@media (max-width: 768px) {
+  .about-story {
+    grid-template-columns: 1fr;
+  }
+}

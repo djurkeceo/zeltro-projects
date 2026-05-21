@@ -1,0 +1,120 @@
+.footer {
+  background: var(--color-charcoal);
+  color: rgba(255, 255, 255, 0.85);
+  padding-top: 3.5rem;
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1.2fr 1.2fr;
+  gap: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.footer h3 {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.footer__logo {
+  display: inline-flex;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+}
+
+.footer__logo-metal,
+.footer__logo-shop {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.footer__logo-metal { color: #fff; }
+.footer__logo-shop { color: var(--color-accent); }
+
+.footer__tagline {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--color-silver);
+  max-width: 280px;
+}
+
+.footer__links ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.footer__links a {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.75);
+  transition: color var(--transition);
+}
+
+.footer__links a:hover {
+  color: var(--color-accent);
+}
+
+.footer__contact address {
+  font-style: normal;
+  font-size: 0.875rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.footer__contact a:hover {
+  color: var(--color-accent);
+}
+
+.footer__dept {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.75rem;
+  font-size: 0.8rem;
+}
+
+.footer__dept strong {
+  color: #fff;
+  font-size: 0.85rem;
+}
+
+.footer__dept span {
+  color: var(--color-silver);
+}
+
+.footer__bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.25rem 0;
+}
+
+.footer__bottom-inner {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--color-silver);
+}
+
+@media (max-width: 900px) {
+  .footer__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .footer__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer__bottom-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}

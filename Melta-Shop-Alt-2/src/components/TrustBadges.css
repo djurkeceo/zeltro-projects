@@ -1,0 +1,36 @@
+.trust-badges {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.trust-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+  color: var(--color-silver-light);
+}
+
+.trust-badge svg {
+  color: var(--color-accent);
+}
+
+.trust-badge span {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+@media (max-width: 640px) {
+  .trust-badges {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
