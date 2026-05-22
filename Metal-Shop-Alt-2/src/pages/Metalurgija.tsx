@@ -1,5 +1,4 @@
 import { motion, useReducedMotion } from 'framer-motion';
-import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import PageHeader from '../components/PageHeader';
 import MetallurgyGrid from '../components/MetallurgyGrid';
 import CtaSection from '../components/CtaSection';
@@ -7,10 +6,6 @@ import MotionSection from '../components/MotionSection';
 import { fadeUp } from '../utils/motion';
 
 export default function Metalurgija() {
-  useDocumentTitle(
-    'Metalurgija',
-    'Limovi, profili, pletiva i konstrukcione cevi — širok asortiman crne metalurgije u METAL SHOP.'
-  );
   const prefersReducedMotion = useReducedMotion();
 
   return (

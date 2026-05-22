@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { motion, useReducedMotion } from 'framer-motion';
-import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import HeroVideo from '../components/HeroVideo';
 import TrustBadges from '../components/TrustBadges';
 import StatsBar from '../components/StatsBar';
@@ -11,7 +10,6 @@ import { fadeUp } from '../utils/motion';
 import './Home.css';
 
 export default function Home() {
-  useDocumentTitle('');
   const prefersReducedMotion = useReducedMotion();
 
   return (

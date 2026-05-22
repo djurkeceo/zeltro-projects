@@ -1,5 +1,4 @@
 import { motion, useReducedMotion } from 'framer-motion';
-import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import PageHeader from '../components/PageHeader';
 import ContactForm from '../components/ContactForm';
 import MotionSection from '../components/MotionSection';
@@ -8,10 +7,6 @@ import { fadeUp, staggerContainer, staggerItem } from '../utils/motion';
 import './Kontakt.css';
 
 export default function Kontakt() {
-  useDocumentTitle(
-    'Kontakt',
-    'Kontaktirajte METAL SHOP d.o.o. — Majšanski put 202, Subotica. Maloprodaja i proizvodnja.'
-  );
   const prefersReducedMotion = useReducedMotion();
 
   return (

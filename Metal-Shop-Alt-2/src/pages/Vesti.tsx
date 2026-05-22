@@ -1,12 +1,10 @@
 import { motion, useReducedMotion } from 'framer-motion';
-import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import PageHeader from '../components/PageHeader';
 import { newsItems } from '../data/news';
 import { staggerContainer, staggerItem } from '../utils/motion';
 import './Vesti.css';
 
 export default function Vesti() {
-  useDocumentTitle('Vesti', 'Novosti i obaveštenja kompanije METAL SHOP d.o.o. iz Subotice.');
   const prefersReducedMotion = useReducedMotion();
 
   return (

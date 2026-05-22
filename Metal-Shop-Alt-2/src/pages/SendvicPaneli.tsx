@@ -1,5 +1,4 @@
 import { motion, useReducedMotion } from 'framer-motion';
-import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import PageHeader from '../components/PageHeader';
 import CtaSection from '../components/CtaSection';
 import MotionSection from '../components/MotionSection';
@@ -8,10 +7,6 @@ import { fadeUp, staggerContainer, staggerItem } from '../utils/motion';
 import './SendvicPaneli.css';
 
 export default function SendvicPaneli() {
-  useDocumentTitle(
-    'Sendvič paneli',
-    'Zidni i krovni sendvič paneli sa termoizolacijom za industrijske i stambene objekte — METAL SHOP.'
-  );
   const prefersReducedMotion = useReducedMotion();
 
   return (

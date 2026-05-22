@@ -1,5 +1,4 @@
 import { motion, useReducedMotion } from 'framer-motion';
-import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import PageHeader from '../components/PageHeader';
 import CtaSection from '../components/CtaSection';
 import { services } from '../data/products';
@@ -7,10 +6,6 @@ import { staggerContainer, staggerItem } from '../utils/motion';
 import './Usluge.css';
 
 export default function Usluge() {
-  useDocumentTitle(
-    'Usluge',
-    'Sečenje po meri, proizvodnja trapeznih limova, olučnih sistema i obrada metala — METAL SHOP.'
-  );
   const prefersReducedMotion = useReducedMotion();
 
   return (

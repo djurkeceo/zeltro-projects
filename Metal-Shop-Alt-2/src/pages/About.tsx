@@ -1,5 +1,4 @@
 import { motion, useReducedMotion } from 'framer-motion';
-import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import PageHeader from '../components/PageHeader';
 import ValuesSection from '../components/ValuesSection';
 import Timeline from '../components/Timeline';
@@ -10,7 +9,6 @@ import { fadeUp } from '../utils/motion';
 import './About.css';
 
 export default function About() {
-  useDocumentTitle('O nama', 'Saznajte više o METAL SHOP d.o.o. — porodičnoj firmi iz Subotice osnovanoj 2006. godine.');
   const prefersReducedMotion = useReducedMotion();
 
   return (

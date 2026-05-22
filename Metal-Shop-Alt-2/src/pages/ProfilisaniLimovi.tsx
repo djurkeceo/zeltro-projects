@@ -1,5 +1,4 @@
 import { motion, useReducedMotion } from 'framer-motion';
-import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import PageHeader from '../components/PageHeader';
 import ProductList from '../components/ProductList';
 import CtaSection from '../components/CtaSection';
@@ -8,10 +7,6 @@ import { profilisaniLimovi } from '../data/products';
 import { fadeUp } from '../utils/motion';
 
 export default function ProfilisaniLimovi() {
-  useDocumentTitle(
-    'Profilisani limovi',
-    'Različiti profili trapeznih i profilisanih limova za krovne i fasadne sisteme — METAL SHOP.'
-  );
   const prefersReducedMotion = useReducedMotion();
 
   return (
