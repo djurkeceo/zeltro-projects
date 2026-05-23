@@ -87,6 +87,8 @@ h1, h2, h3, h4 {
 
 .section {
   padding: 4.5rem 0;
+  content-visibility: auto;
+  contain-intrinsic-size: 900px;
 }
 
 .section--dark {
@@ -218,6 +220,11 @@ h1, h2, h3, h4 {
 }
 
 @media (max-width: 768px) {
+  :root {
+    --font-heading: system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --font-body: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  }
+
   .section {
     padding: 3rem 0;
   }
