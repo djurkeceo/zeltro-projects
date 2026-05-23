@@ -14,7 +14,7 @@ export default function Home() {
 
   return (
     <>
-      <section className="hero metal-texture" aria-label="Početna sekcija">
+      <section className="hero hero--critical metal-texture" aria-label="Početna sekcija">
         <HeroVideo />
         <div className="hero__overlay" />
         <div className="container hero__content">
