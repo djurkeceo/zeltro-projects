@@ -9,11 +9,11 @@ const deferStylesheets = () => ({
     return html.replace(
       /<link\s+[^>]*rel=["']stylesheet["'][^>]*href=["']([^"']+\.css(?:\?[^"']*)?)["'][^>]*>/g,
       (match) => {
-        const preloadTag = match.replace(
+        const deferredTag = match.replace(
           /rel=["']stylesheet["']/,
-          'rel="preload" as="style" onload="this.onload=null;this.rel=\'stylesheet\'"'
+          'rel="stylesheet" media="print" onload="this.media=\'all\'"'
         );
-        return `${preloadTag}<noscript>${match}</noscript>`;
+        return `${deferredTag}<noscript>${match}</noscript>`;
       }
     );
   },
