@@ -21,19 +21,57 @@
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="METAL SHOP d.o.o. | Metalna proizvodnja i veleprodaja Subotica" />
     <meta name="twitter:description" content="METAL SHOP Subotica - Prodaja cevi, limova, čelika i čeličnih profila. Građevinska limarija i metalurgija od 2006." />
-    <link rel="preload" href="/metalshop.mp4" as="video" type="video/mp4" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Montserrat:wght@400;600&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Montserrat:wght@400;600&display=swap"
+      />
+    </noscript>
     <title>METAL SHOP d.o.o. | Metalna proizvodnja i veleprodaja Subotica</title>
-  </head>
-  <body>
     <style>
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+        background: #f5f5f5;
+      }
       #root:empty {
         min-height: 100vh;
         background: linear-gradient(135deg, #121f35 0%, #1a2b4a 100%);
       }
+      .hero--critical {
+        position: relative;
+        min-height: 85vh;
+        display: flex;
+        align-items: center;
+        background: linear-gradient(135deg, #121f35 0%, #1a2b4a 100%);
+        color: #fff;
+      }
+      .hero--critical h1 {
+        font-size: clamp(2rem, 6vw, 3.25rem);
+        line-height: 1.1;
+        margin: 0 0 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+      }
+      .hero--critical p {
+        margin: 0;
+        color: #a8b5c4;
+        max-width: 560px;
+      }
+      .page-loader {
+        min-height: 40vh;
+      }
     </style>
+  </head>
+  <body>
     <noscript>
       <div style="max-width:720px;margin:2rem auto;padding:1rem;font-family:sans-serif">
         <h1>METAL SHOP d.o.o. — Subotica</h1>

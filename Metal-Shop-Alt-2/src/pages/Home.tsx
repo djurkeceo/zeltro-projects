@@ -18,35 +18,12 @@ export default function Home() {
         <HeroVideo />
         <div className="hero__overlay" />
         <div className="container hero__content">
-          <motion.p
-            className="hero__eyebrow"
-            initial={prefersReducedMotion ? false : { opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-          >
-            Subotica · Od 2006.
-          </motion.p>
-          <motion.h1
-            initial={prefersReducedMotion ? false : { opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-          >
-            Vaš pouzdani partner u metalu od 2006.
-          </motion.h1>
-          <motion.p
-            className="hero__subtitle"
-            initial={prefersReducedMotion ? false : { opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
+          <p className="hero__eyebrow">Subotica · Od 2006.</p>
+          <h1>Vaš pouzdani partner u metalu od 2006.</h1>
+          <p className="hero__subtitle">
             Proizvodnja, maloprodaja i veleprodaja metalne robe u Srbiji
-          </motion.p>
-          <motion.div
-            className="hero__actions"
-            initial={prefersReducedMotion ? false : { opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
+          </p>
+          <div className="hero__actions">
             <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
               <Link to="/proizvodi/gradjevinska-limarija" className="btn btn--primary">
                 Pogledajte naš asortiman
@@ -57,7 +34,7 @@ export default function Home() {
                 Kontaktirajte nas
               </Link>
             </motion.div>
-          </motion.div>
+          </div>
           <TrustBadges />
         </div>
       </section>

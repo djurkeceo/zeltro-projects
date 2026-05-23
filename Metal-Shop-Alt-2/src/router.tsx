@@ -1,29 +1,36 @@
+import { lazy, Suspense, type ReactNode } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import Layout from './components/Layout';
-import Home from './pages/Home';
-import About from './pages/About';
-import GradjevinskaLimarija from './pages/GradjevinskaLimarija';
-import ProfilisaniLimovi from './pages/ProfilisaniLimovi';
-import Metalurgija from './pages/Metalurgija';
-import SendvicPaneli from './pages/SendvicPaneli';
-import Usluge from './pages/Usluge';
-import Vesti from './pages/Vesti';
-import Kontakt from './pages/Kontakt';
+import PageLoader from './components/PageLoader';
+
+const Home = lazy(() => import('./pages/Home'));
+const About = lazy(() => import('./pages/About'));
+const GradjevinskaLimarija = lazy(() => import('./pages/GradjevinskaLimarija'));
+const ProfilisaniLimovi = lazy(() => import('./pages/ProfilisaniLimovi'));
+const Metalurgija = lazy(() => import('./pages/Metalurgija'));
+const SendvicPaneli = lazy(() => import('./pages/SendvicPaneli'));
+const Usluge = lazy(() => import('./pages/Usluge'));
+const Vesti = lazy(() => import('./pages/Vesti'));
+const Kontakt = lazy(() => import('./pages/Kontakt'));
+
+function suspense(element: ReactNode) {
+  return <Suspense fallback={<PageLoader />}>{element}</Suspense>;
+}
 
 export const router = createBrowserRouter([
   {
     path: '/',
     element: <Layout />,
     children: [
-      { index: true, element: <Home /> },
-      { path: 'o-nama', element: <About /> },
-      { path: 'proizvodi/gradjevinska-limarija', element: <GradjevinskaLimarija /> },
-      { path: 'proizvodi/profilisani-limovi', element: <ProfilisaniLimovi /> },
-      { path: 'metalurgija', element: <Metalurgija /> },
-      { path: 'sendvic-paneli', element: <SendvicPaneli /> },
-      { path: 'usluge', element: <Usluge /> },
-      { path: 'vesti', element: <Vesti /> },
-      { path: 'kontakt', element: <Kontakt /> },
+      { index: true, element: suspense(<Home />) },
+      { path: 'o-nama', element: suspense(<About />) },
+      { path: 'proizvodi/gradjevinska-limarija', element: suspense(<GradjevinskaLimarija />) },
+      { path: 'proizvodi/profilisani-limovi', element: suspense(<ProfilisaniLimovi />) },
+      { path: 'metalurgija', element: suspense(<Metalurgija />) },
+      { path: 'sendvic-paneli', element: suspense(<SendvicPaneli />) },
+      { path: 'usluge', element: suspense(<Usluge />) },
+      { path: 'vesti', element: suspense(<Vesti />) },
+      { path: 'kontakt', element: suspense(<Kontakt />) },
     ],
   },
 ]);

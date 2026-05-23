@@ -11,8 +11,8 @@
   --color-text: #2a2a2e;
   --color-text-muted: #5a5a62;
   --color-border: #d8dce3;
-  --font-heading: 'Barlow Condensed', 'Montserrat', sans-serif;
-  --font-body: 'Montserrat', system-ui, sans-serif;
+  --font-heading: 'Barlow Condensed', system-ui, -apple-system, sans-serif;
+  --font-body: 'Montserrat', system-ui, -apple-system, sans-serif;
   --container-max: 1200px;
   --header-height: 72px;
   --transition: 0.2s ease;
