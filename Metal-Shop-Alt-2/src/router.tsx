@@ -1,5 +1,5 @@
 import { lazy, Suspense, type ReactNode } from 'react';
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Layout from './components/Layout';
 import PageLoader from './components/PageLoader';
 
@@ -17,7 +17,7 @@ function suspense(element: ReactNode) {
   return <Suspense fallback={<PageLoader />}>{element}</Suspense>;
 }
 
-export const router = createBrowserRouter([
+const router = createBrowserRouter([
   {
     path: '/',
     element: <Layout />,
@@ -34,3 +34,7 @@ export const router = createBrowserRouter([
     ],
   },
 ]);
+
+export default function AppRouter() {
+  return <RouterProvider router={router} />;
+}

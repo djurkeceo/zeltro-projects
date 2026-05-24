@@ -22,11 +22,6 @@ export default function Navbar() {
   const location = useLocation();
 
   useEffect(() => {
-    setMenuOpen(false);
-    setDropdownOpen(false);
-  }, [location.pathname]);
-
-  useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
   }, [menuOpen]);
