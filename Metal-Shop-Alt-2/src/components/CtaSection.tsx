@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+import type { MouseEvent } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { motion, useReducedMotion } from 'framer-motion';
 import { fadeUp, defaultViewport } from '../utils/motion';
 import './CtaSection.css';
@@ -13,6 +14,18 @@ export default function CtaSection({
   subtitle = 'Naš tim je spreman da odgovori na vaša pitanja i pripremi ponudu po meri.',
 }: CtaSectionProps) {
   const prefersReducedMotion = useReducedMotion();
+  const location = useLocation();
+  const isGradjevinskaPage =
+    location.pathname.replace(/\/$/, '') === '/proizvodi/gradjevinska-limarija';
+
+  const handleAsortimanClick = (event: MouseEvent<HTMLAnchorElement>) => {
+    if (!isGradjevinskaPage) {
+      return;
+    }
+
+    event.preventDefault();
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+  };
 
   return (
     <motion.section
@@ -44,7 +57,11 @@ export default function CtaSection({
             <Link to="/kontakt" className="btn btn--primary">Kontaktirajte nas</Link>
           </motion.div>
           <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
-            <Link to="/proizvodi/gradjevinska-limarija" className="btn btn--secondary">
+            <Link
+              to="/proizvodi/gradjevinska-limarija"
+              className="btn btn--secondary"
+              onClick={handleAsortimanClick}
+            >
               Pogledajte asortiman
             </Link>
           </motion.div>
