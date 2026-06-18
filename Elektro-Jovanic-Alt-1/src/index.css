@@ -1,0 +1,89 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-heading: 'Bebas Neue', 'Oswald', sans-serif;
+  --font-body: 'Inter', 'Roboto', sans-serif;
+  --color-brand-black: #0a0a0a;
+  --color-brand-surface: #111111;
+  --color-brand-surface-2: #1a1a1a;
+  --color-brand-gold: #f5a623;
+  --color-brand-gold-soft: rgba(245, 166, 35, 0.16);
+  --color-brand-white: #ffffff;
+  --color-brand-muted: #aaaaaa;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background: #0a0a0a;
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    overflow-x: hidden;
+    font-family: var(--font-body);
+    color: #ffffff;
+    background:
+      radial-gradient(circle at 20% 10%, rgba(245, 166, 35, 0.12), transparent 28rem),
+      linear-gradient(180deg, #0a0a0a 0%, #111111 48%, #0a0a0a 100%);
+  }
+
+  ::selection {
+    color: #0a0a0a;
+    background: #f5a623;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .bg-industrial {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .clip-bolt {
+    clip-path: polygon(
+      52% 0,
+      23% 0,
+      34% 39%,
+      12% 39%,
+      45% 100%,
+      55% 58%,
+      78% 58%
+    );
+  }
+
+  .gold-sheen {
+    background: linear-gradient(110deg, #f5a623 0%, #ffd166 42%, #f5a623 72%, #d98a12 100%);
+    background-size: 200% 100%;
+  }
+
+  .section-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: #f5a623;
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .section-eyebrow::before,
+  .section-eyebrow::after {
+    content: '';
+    width: 2.5rem;
+    height: 2px;
+    background: #f5a623;
+  }
+
+  .section-eyebrow::after {
+    width: 1rem;
+  }
+}
