@@ -102,19 +102,13 @@ function MenuIcon({ open }: { open: boolean }) {
   return (
     <span className="relative block h-4 w-5">
       <span
-        className={`absolute left-0 top-0 h-0.5 w-5 bg-current transition-transform duration-300 ${
-          open ? "translate-y-[7px] rotate-45" : ""
-        }`}
+        className={`absolute left-0 top-0 h-0.5 w-5 bg-current transition-transform duration-300 ${open ? "translate-y-[7px] rotate-45" : ""}`}
       />
       <span
-        className={`absolute left-0 top-[7px] h-0.5 w-5 bg-current transition-opacity duration-300 ${
-          open ? "opacity-0" : "opacity-100"
-        }`}
+        className={`absolute left-0 top-[7px] h-0.5 w-5 bg-current transition-opacity duration-300 ${open ? "opacity-0" : "opacity-100"}`}
       />
       <span
-        className={`absolute left-0 top-3 h-0.5 w-5 bg-current transition-transform duration-300 ${
-          open ? "translate-y-[-5px] -rotate-45" : ""
-        }`}
+        className={`absolute left-0 top-3 h-0.5 w-5 bg-current transition-transform duration-300 ${open ? "translate-y-[-5px] -rotate-45" : ""}`}
       />
     </span>
   );
@@ -144,6 +138,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-[#0a0a0a] text-white">
+      {/* ── NAVBAR ── */}
       <header
         className={`fixed inset-x-0 top-0 z-50 border-b border-white/10 transition-all ${
           scrolled
@@ -195,12 +190,13 @@ export default function App() {
             className="inline-flex items-center justify-center rounded-full border border-white/15 p-3 text-white md:hidden"
             aria-expanded={menuOpen}
             aria-label="Otvorite meni"
-            onClick={() => setMenuOpen((value) => !value)}
+            onClick={() => setMenuOpen((v) => !v)}
           >
             <MenuIcon open={menuOpen} />
           </button>
         </div>
 
+        {/* Mobile menu */}
         <div
           className={`md:hidden ${
             menuOpen
@@ -233,158 +229,260 @@ export default function App() {
       </header>
 
       <main id="top">
+        {/* ── HERO ── */}
         <section className="relative isolate overflow-hidden pt-28 sm:pt-32">
-          <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,rgba(245,166,35,0.15),transparent_28%),linear-gradient(135deg,#0a0a0a_0%,#0a0a0a_50%,#111111_50%,#111111_70%,#ffffff_70%,#ffffff_74%,#0a0a0a_74%)]" />
-          <div className="absolute left-[-8%] top-1/2 -z-10 h-[34rem] w-[34rem] -translate-y-1/2 rounded-full bg-[#F5A623]/8 blur-3xl" />
-          <div className="absolute right-[-8rem] top-10 -z-10 hidden h-[36rem] w-[36rem] rounded-full bg-white/6 blur-3xl lg:block" />
+          {/* Backgrounds */}
+          <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_80%_50%_at_20%_-10%,rgba(245,166,35,0.18),transparent)]" />
+          <div className="absolute inset-0 -z-10 bg-[linear-gradient(160deg,#0a0a0a_0%,#0d0d0d_45%,#111111_55%,#ffffff_55%,#ffffff_58%,#0a0a0a_58%)]" />
+          <div className="absolute left-[-12%] top-1/3 -z-10 h-[42rem] w-[42rem] -translate-y-1/2 rounded-full bg-[#F5A623]/6 blur-[100px]" />
 
-          <div className="mx-auto grid min-h-[calc(100vh-7rem)] max-w-7xl items-start gap-10 px-4 pb-12 sm:px-6 lg:grid-cols-[1.08fr_0.92fr] lg:px-10">
-            <motion.div
-              initial="hidden"
-              animate="show"
-              variants={{
-                hidden: {},
-                show: { transition: { staggerChildren: 0.12 } },
-              }}
-              className="flex flex-col gap-8 lg:pt-4"
-            >
+          {/* Giant background bolt */}
+          <motion.div
+            className="pointer-events-none absolute right-[8%] top-1/2 -z-10 -translate-y-1/2 text-[#F5A623]/[0.04]"
+            animate={{ rotate: [0, 3, -3, 0], scale: [1, 1.04, 1] }}
+            transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <BoltMark className="h-[38rem] w-[38rem]" />
+          </motion.div>
+
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
+            {/* Main 2-col grid */}
+            <div className="grid min-h-[calc(100vh-8rem)] grid-rows-[1fr_auto] gap-8 pb-10 lg:grid-cols-2 lg:grid-rows-1 lg:gap-16 lg:pb-14">
+              {/* LEFT — Text */}
               <motion.div
-                variants={fadeUp}
-                transition={{ duration: 0.7, ease: "easeOut" }}
+                initial="hidden"
+                animate="show"
+                variants={{
+                  hidden: {},
+                  show: { transition: { staggerChildren: 0.1 } },
+                }}
+                className="flex flex-col justify-center"
               >
-                <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[0.72rem] uppercase tracking-[0.34em] text-white/70">
-                  <span className="text-[#F5A623]">
-                    <BoltMark className="h-4 w-4" />
-                  </span>
+                {/* Eyebrow */}
+                <motion.div
+                  variants={fadeUp}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                  className="inline-flex w-fit items-center gap-2.5 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[0.7rem] uppercase tracking-[0.36em] text-white/60"
+                >
+                  <BoltMark className="h-3.5 w-3.5 text-[#F5A623]" />
                   Subotica, Srbija
-                </div>
+                </motion.div>
 
-                <h1 className="mt-6 max-w-4xl font-display text-[clamp(4.2rem,10vw,7.25rem)] uppercase leading-[0.84] tracking-[0.07em] text-white">
-                  Struja je naš posao
-                </h1>
+                {/* Headline */}
+                <motion.h1
+                  variants={fadeUp}
+                  transition={{ duration: 0.7, ease: "easeOut" }}
+                  className="mt-5 font-display text-[clamp(4.4rem,11vw,7.8rem)] uppercase leading-[0.82] tracking-[0.06em] text-white"
+                >
+                  Struja
+                  <br />
+                  <span className="text-[#F5A623]">je naš</span>
+                  <br />
+                  posao
+                </motion.h1>
 
-                <p className="mt-6 max-w-2xl text-lg leading-8 text-white/72 sm:text-xl">
+                {/* Gold divider */}
+                <motion.div
+                  variants={fadeUp}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                  className="mt-8 h-px w-16 bg-[#F5A623]"
+                />
+
+                {/* Subheadline */}
+                <motion.p
+                  variants={fadeUp}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                  className="mt-6 max-w-md text-lg leading-8 text-white/65"
+                >
                   Profesionalne elektroinstalacije u Subotici i okolini, sa
                   fokusom na bezbednost, urednost i dugotrajno rešenje.
-                </p>
+                </motion.p>
 
-                <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+                {/* CTA buttons */}
+                <motion.div
+                  variants={fadeUp}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                  className="mt-9 flex flex-wrap gap-4"
+                >
                   <motion.a
                     href="tel:0658275055"
-                    whileHover={{ scale: 1.03, y: -2 }}
-                    whileTap={{ scale: 0.98 }}
-                    transition={{ type: "spring", stiffness: 380, damping: 24 }}
-                    className="inline-flex items-center justify-center gap-3 rounded-full bg-[#F5A623] px-8 py-4 text-sm font-bold uppercase tracking-[0.22em] text-[#0a0a0a] shadow-[0_14px_40px_rgba(245,166,35,0.18)]"
+                    whileHover={{ scale: 1.04, y: -2 }}
+                    whileTap={{ scale: 0.97 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 22 }}
+                    className="inline-flex items-center gap-2.5 rounded-full bg-[#F5A623] px-8 py-4 text-sm font-bold uppercase tracking-[0.2em] text-[#0a0a0a] shadow-[0_16px_48px_rgba(245,166,35,0.22)]"
                   >
                     Pozovite nas <span aria-hidden="true">→</span>
                   </motion.a>
                   <motion.a
                     href="#usluge"
-                    whileHover={{ scale: 1.03, y: -2 }}
-                    whileTap={{ scale: 0.98 }}
-                    transition={{ type: "spring", stiffness: 380, damping: 24 }}
-                    className="inline-flex items-center justify-center rounded-full border border-white/20 px-8 py-4 text-sm font-bold uppercase tracking-[0.22em] text-white/90 transition hover:border-[#F5A623] hover:text-[#F5A623]"
+                    whileHover={{ scale: 1.04, y: -2 }}
+                    whileTap={{ scale: 0.97 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 22 }}
+                    className="inline-flex items-center gap-2.5 rounded-full border border-white/18 px-8 py-4 text-sm font-bold uppercase tracking-[0.2em] text-white/85 transition-colors hover:border-[#F5A623]/60 hover:text-[#F5A623]"
                   >
                     Pogledajte usluge
                   </motion.a>
-                </div>
-              </motion.div>
-            </motion.div>
-
-            <motion.div style={{ y: heroPanelY }} className="relative lg:pt-10">
-              <div className="absolute inset-0 -z-10 translate-x-6 translate-y-6 rounded-[2.25rem] border border-white/10 bg-white/5" />
-              <div className="relative overflow-hidden rounded-[2.25rem] border border-white/10 bg-[#0f0f0f] shadow-[0_24px_90px_rgba(0,0,0,0.48)]">
-                <div className="absolute inset-0 bg-[linear-gradient(135deg,#0a0a0a_0%,#0a0a0a_56%,rgba(255,255,255,0.08)_56%,rgba(255,255,255,0.08)_72%,#111111_72%)] opacity-90" />
-                <div className="absolute right-0 top-0 h-full w-[38%] bg-white/6" />
-                <div className="absolute left-[-2rem] top-[-2rem] h-64 w-64 rounded-full bg-[#F5A623]/15 blur-3xl" />
-                <motion.div
-                  style={{ y: heroBoltY, rotate: heroBoltRotate }}
-                  animate={{ scale: [1, 1.06, 1] }}
-                  transition={{
-                    duration: 8,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                  className="absolute right-4 top-4 hidden text-[#F5A623]/18 lg:block"
-                >
-                  <BoltMark className="h-56 w-56" />
                 </motion.div>
 
-                <div className="relative flex min-h-[34rem] flex-col justify-between p-8 sm:p-10">
-                  <div className="max-w-lg">
-                    <p className="text-xs uppercase tracking-[0.44em] text-white/45">
-                      Jovanić Elektro
-                    </p>
-                    <p className="mt-5 font-display text-[clamp(3.8rem,7vw,6rem)] uppercase leading-none tracking-[0.16em] text-white">
-                      JOVANIĆ
-                    </p>
-                    <p className="font-display text-[clamp(2rem,4vw,3rem)] uppercase tracking-[0.38em] text-[#F5A623]">
-                      ELEKTRO
-                    </p>
-                    <p className="mt-6 max-w-md text-lg leading-8 text-white/72">
-                      Jedan jasan vizuelni blok, inspirisan vozilom i zlatnim
-                      bolt motivom.
-                    </p>
-                  </div>
+                {/* Contact strip */}
+                <motion.div
+                  variants={fadeUp}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                  className="mt-10 flex items-center gap-5 border-t border-white/8 pt-8"
+                >
+                  <a
+                    href="tel:0658275055"
+                    className="text-sm font-semibold tracking-wide text-white/45 transition hover:text-[#F5A623]"
+                  >
+                    065 827 5055
+                  </a>
+                  <span className="h-4 w-px bg-white/15" />
+                  <a
+                    href="mailto:positivevoltage24@gmail.com"
+                    className="text-sm font-semibold tracking-wide text-white/45 transition hover:text-[#F5A623]"
+                  >
+                    positivevoltage24@gmail.com
+                  </a>
+                </motion.div>
+              </motion.div>
 
-                  <div className="grid gap-3 sm:grid-cols-3">
-                    <div className="rounded-[1.25rem] border border-white/10 bg-black/30 px-4 py-4">
-                      <p className="text-xs uppercase tracking-[0.35em] text-white/45">
-                        Servis
+              {/* RIGHT — Card panel */}
+              <motion.div
+                initial={{ opacity: 0, x: 40 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+                style={{ y: heroPanelY }}
+                className="relative flex items-center lg:justify-end"
+              >
+                {/* Offset shadow */}
+                <div className="absolute inset-0 translate-x-4 translate-y-4 rounded-[2.5rem] border border-white/8 bg-white/3" />
+
+                <div className="relative w-full overflow-hidden rounded-[2.5rem] border border-white/10 bg-[#0f0f0f] shadow-[0_32px_100px_rgba(0,0,0,0.55)]">
+                  {/* Diagonal split */}
+                  <div className="absolute inset-0 bg-[linear-gradient(135deg,#0a0a0a_0%,#0a0a0a_52%,rgba(255,255,255,0.055)_52%,rgba(255,255,255,0.055)_68%,#111111_68%)]" />
+                  {/* Gold glow */}
+                  <div className="absolute -left-10 -top-10 h-72 w-72 rounded-full bg-[#F5A623]/12 blur-[80px]" />
+                  {/* Animated bolt inside card */}
+                  <motion.div
+                    style={{ y: heroBoltY, rotate: heroBoltRotate }}
+                    animate={{ scale: [1, 1.07, 1] }}
+                    transition={{
+                      duration: 10,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                    className="absolute bottom-8 right-4 text-[#F5A623]/12"
+                  >
+                    <BoltMark className="h-52 w-52" />
+                  </motion.div>
+
+                  <div className="relative flex flex-col gap-8 p-8 sm:p-10">
+                    {/* Card header */}
+                    <div>
+                      <p className="text-[0.65rem] uppercase tracking-[0.5em] text-white/35">
+                        Jovanić Elektro · Subotica
                       </p>
-                      <p className="mt-2 text-lg font-semibold text-white">
-                        Kuće i stanovi
+                      <p className="mt-4 font-display text-[clamp(3.5rem,7vw,5.5rem)] uppercase leading-none tracking-[0.12em] text-white">
+                        JOVANIĆ
+                      </p>
+                      <p className="font-display text-[clamp(1.8rem,3.5vw,2.6rem)] uppercase tracking-[0.4em] text-[#F5A623]">
+                        ELEKTRO
                       </p>
                     </div>
-                    <div className="rounded-[1.25rem] border border-white/10 bg-[#F5A623] px-4 py-4 text-[#0a0a0a]">
-                      <p className="text-xs uppercase tracking-[0.35em] text-[#0a0a0a]/55">
-                        Fokus
+
+                    <div className="h-px bg-white/8" />
+
+                    {/* Service pills */}
+                    <div>
+                      <p className="mb-4 text-[0.65rem] uppercase tracking-[0.42em] text-white/35">
+                        Usluge
                       </p>
-                      <p className="mt-2 text-lg font-semibold">
-                        Uredan završetak
-                      </p>
+                      <div className="flex flex-wrap gap-2">
+                        {[
+                          "Elektroinstalacije",
+                          "Rasveta & LED",
+                          "Video nadzor",
+                          "Interfoni",
+                          "Pametne kuće",
+                          "Gromobransko",
+                        ].map((tag, i) => (
+                          <motion.span
+                            key={tag}
+                            initial={{ opacity: 0, scale: 0.88 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{
+                              delay: 0.45 + i * 0.07,
+                              duration: 0.4,
+                              ease: "easeOut",
+                            }}
+                            className="rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5 text-xs font-medium uppercase tracking-[0.16em] text-white/65"
+                          >
+                            {tag}
+                          </motion.span>
+                        ))}
+                      </div>
                     </div>
-                    <div className="rounded-[1.25rem] border border-white/10 bg-black/30 px-4 py-4">
-                      <p className="text-xs uppercase tracking-[0.35em] text-white/45">
-                        Poziv
-                      </p>
-                      <p className="mt-2 text-lg font-semibold text-white">
-                        065 827 5055
-                      </p>
+
+                    {/* Stat row */}
+                    <div className="grid grid-cols-3 gap-3">
+                      {[
+                        {
+                          label: "Servis",
+                          value: "Kuće i lokali",
+                          gold: false,
+                        },
+                        { label: "Fokus", value: "Uredan rad", gold: true },
+                        { label: "Od", value: "2021. god.", gold: false },
+                      ].map((item) => (
+                        <div
+                          key={item.label}
+                          className={`rounded-2xl border px-3 py-4 ${
+                            item.gold
+                              ? "border-[#F5A623]/30 bg-[#F5A623] text-[#0a0a0a]"
+                              : "border-white/8 bg-black/25 text-white"
+                          }`}
+                        >
+                          <p
+                            className={`text-[0.6rem] uppercase tracking-[0.32em] ${item.gold ? "text-[#0a0a0a]/50" : "text-white/35"}`}
+                          >
+                            {item.label}
+                          </p>
+                          <p className="mt-1.5 text-sm font-semibold leading-snug">
+                            {item.value}
+                          </p>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            </div>
 
+            {/* Stats strip */}
             <motion.div
-              variants={fadeUp}
-              transition={{ duration: 0.7, ease: "easeOut" }}
-              className="lg:col-span-2 overflow-hidden rounded-[1.5rem] border border-white/10 bg-[#111111]/80 backdrop-blur-sm"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: "easeOut", delay: 0.5 }}
+              className="mb-12 overflow-hidden rounded-2xl border border-white/10 bg-[#111111]/80 backdrop-blur-sm"
             >
-              <div className="grid gap-px sm:grid-cols-3">
+              <div className="grid divide-x divide-white/8 sm:grid-cols-3">
                 {heroStats.map((stat, index) => (
                   <motion.div
                     key={stat.label}
-                    whileHover={{ y: -2 }}
-                    transition={{ type: "spring", stiffness: 280, damping: 26 }}
-                    className={`px-6 py-5 ${
-                      index === 1
-                        ? "bg-[#F5A623] text-[#0a0a0a]"
-                        : "bg-[#111111]"
-                    }`}
+                    whileHover={{
+                      backgroundColor:
+                        index === 1 ? "" : "rgba(255,255,255,0.03)",
+                    }}
+                    transition={{ duration: 0.2 }}
+                    className={`px-7 py-5 ${index === 1 ? "bg-[#F5A623]" : ""}`}
                   >
                     <p
-                      className={`text-xl font-semibold uppercase tracking-[0.22em] ${
-                        index === 1 ? "text-[#0a0a0a]" : "text-white"
-                      }`}
+                      className={`text-base font-bold uppercase tracking-[0.2em] ${index === 1 ? "text-[#0a0a0a]" : "text-white"}`}
                     >
                       {stat.value}
                     </p>
                     <p
-                      className={`mt-2 text-sm leading-6 ${
-                        index === 1 ? "text-[#0a0a0a]/80" : "text-white/62"
-                      }`}
+                      className={`mt-1.5 text-sm ${index === 1 ? "text-[#0a0a0a]/65" : "text-white/50"}`}
                     >
                       {stat.label}
                     </p>
@@ -392,13 +490,13 @@ export default function App() {
                 ))}
               </div>
             </motion.div>
-          </div>
 
-          <div className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-10">
-            <div className="h-px w-full bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+            {/* Section divider */}
+            <div className="h-px w-full bg-gradient-to-r from-transparent via-white/15 to-transparent" />
           </div>
         </section>
 
+        {/* ── USLUGE ── */}
         <section
           id="usluge"
           className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-10"
@@ -467,7 +565,7 @@ export default function App() {
                   <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#F5A623] text-2xl shadow-[0_0_35px_rgba(245,166,35,0.18)]">
                     <span aria-hidden="true">{service.icon}</span>
                   </div>
-                  <h3 className="mt-5 text-2xl font-display uppercase tracking-[0.08em] text-white">
+                  <h3 className="mt-5 font-display text-2xl uppercase tracking-[0.08em] text-white">
                     {service.title}
                   </h3>
                   <p className="mt-3 text-base leading-7 text-white/68">
@@ -479,6 +577,7 @@ export default function App() {
           </div>
         </section>
 
+        {/* ── O NAMA + KONTAKT ── */}
         <section
           id="o-nama"
           className="border-y border-white/10 bg-gradient-to-b from-white/[0.03] to-transparent"
@@ -543,7 +642,7 @@ export default function App() {
                       key={point}
                       className="flex items-start gap-3 text-white/78"
                     >
-                      <span className="mt-1 h-2.5 w-2.5 rounded-full bg-[#F5A623]" />
+                      <span className="mt-1 h-2.5 w-2.5 shrink-0 rounded-full bg-[#F5A623]" />
                       <p className="text-base leading-7">{point}</p>
                     </div>
                   ))}
