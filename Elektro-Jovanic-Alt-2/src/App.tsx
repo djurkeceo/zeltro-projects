@@ -148,9 +148,10 @@ export default function App() {
       >
         <div className="mx-auto grid max-w-7xl grid-cols-[auto_1fr_auto] items-center gap-4 px-4 py-4 sm:px-6 lg:px-10">
           <a href="#top" className="group flex items-center gap-3">
-            <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white text-[#0a0a0a] shadow-[0_0_35px_rgba(245,166,35,0.25)]">
-              <BoltMark className="h-5 w-5 text-[#F5A623]" />
-            </span>
+            <img src="./assets/logoalt1.png"></img>
+            {/* <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white text-[#0a0a0a] shadow-[0_0_35px_rgba(245,166,35,0.25)]"> */}
+            {/* <BoltMark className="h-5 w-5 text-[#F5A623]" /> */}
+            {/* </span> */}
             <span className="leading-none">
               <span className="block text-[0.72rem] font-bold uppercase tracking-[0.46em] text-white">
                 JOVANIĆ
@@ -233,7 +234,7 @@ export default function App() {
         <section className="relative isolate overflow-hidden pt-28 sm:pt-32">
           {/* Backgrounds */}
           <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_80%_50%_at_20%_-10%,rgba(245,166,35,0.18),transparent)]" />
-          <div className="absolute inset-0 -z-10 bg-[linear-gradient(160deg,#0a0a0a_0%,#0d0d0d_45%,#111111_55%,#ffffff_55%,#ffffff_58%,#0a0a0a_58%)]" />
+          {/* <div className="absolute inset-0 -z-10 bg-[linear-gradient(160deg,#0a0a0a_0%,#0d0d0d_45%,#111111_55%,#ffffff_55%,#ffffff_58%,#0a0a0a_58%)]" /> */}
           <div className="absolute left-[-12%] top-1/3 -z-10 h-[42rem] w-[42rem] -translate-y-1/2 rounded-full bg-[#F5A623]/6 blur-[100px]" />
 
           {/* Giant background bolt */}
@@ -363,18 +364,6 @@ export default function App() {
                   {/* Gold glow */}
                   <div className="absolute -left-10 -top-10 h-72 w-72 rounded-full bg-[#F5A623]/12 blur-[80px]" />
                   {/* Animated bolt inside card */}
-                  <motion.div
-                    style={{ y: heroBoltY, rotate: heroBoltRotate }}
-                    animate={{ scale: [1, 1.07, 1] }}
-                    transition={{
-                      duration: 10,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                    }}
-                    className="absolute bottom-8 right-4 text-[#F5A623]/12"
-                  >
-                    <BoltMark className="h-52 w-52" />
-                  </motion.div>
 
                   <div className="relative flex flex-col gap-8 p-8 sm:p-10">
                     {/* Card header */}
