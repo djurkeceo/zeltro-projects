@@ -118,8 +118,6 @@ export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { scrollYProgress } = useScroll();
-  const heroBoltY = useTransform(scrollYProgress, [0, 0.35], [0, -44]);
-  const heroBoltRotate = useTransform(scrollYProgress, [0, 0.35], [0, 9]);
   const heroPanelY = useTransform(scrollYProgress, [0, 0.35], [0, 28]);
 
   useEffect(() => {
