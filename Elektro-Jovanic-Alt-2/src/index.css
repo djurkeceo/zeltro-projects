@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap');
-@import 'tailwindcss';
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap");
+@import "tailwindcss";
 
 @layer base {
   :root {
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: "Inter", system-ui, sans-serif;
     color: #ffffff;
     background: #0a0a0a;
     font-synthesis: none;
@@ -34,7 +34,7 @@
   h2,
   h3,
   .font-display {
-    font-family: 'Bebas Neue', 'Inter', sans-serif;
+    font-family: "Bebas Neue", "Inter", sans-serif;
   }
 
   * {
@@ -50,4 +50,11 @@
     background: rgba(245, 166, 35, 0.35);
     color: #ffffff;
   }
+}
+
+.nav-logo {
+  height: 3rem;
+  width: auto;
+  object-fit: contain;
+  display: block;
 }
