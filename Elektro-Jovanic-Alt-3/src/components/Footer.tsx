@@ -4,7 +4,7 @@ const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-8">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2 group">
+          <a href="#pocetna" className="flex items-center gap-2 group" aria-label="Početak stranice Jovanić Elektro">
             <div className="flex flex-col leading-none">
               <span className="font-heading text-2xl font-bold tracking-wider text-brand-white">JOVANIĆ</span>
               <span className="font-heading text-lg font-bold tracking-[0.2em] text-brand-gold">ELEKTRO</span>

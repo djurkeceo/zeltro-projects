@@ -5,12 +5,14 @@ import WhyUs from './components/WhyUs';
 import About from './components/About';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Seo from './components/Seo';
 
 function App() {
   return (
     <div className="min-h-screen bg-brand-black text-text-primary">
+      <Seo />
       <Navbar />
-      <main>
+      <main id="sadrzaj">
         <Hero />
         <Services />
         <WhyUs />

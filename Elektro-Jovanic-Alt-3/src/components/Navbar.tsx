@@ -28,7 +28,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2 group">
+        <a href="#pocetna" className="flex items-center gap-2 group" aria-label="Početak stranice Jovanić Elektro">
           <div className="flex flex-col leading-none">
             <span className="font-heading text-3xl font-bold tracking-wider text-brand-white">JOVANIĆ</span>
             <span className="font-heading text-xl font-bold tracking-[0.2em] text-brand-gold">ELEKTRO</span>
