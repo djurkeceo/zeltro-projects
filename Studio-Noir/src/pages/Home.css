@@ -88,9 +88,6 @@
 }
 
 .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
   padding: 16px 32px;
   font-family: var(--font-body);
   font-size: 13px;
@@ -98,7 +95,6 @@
   letter-spacing: 0.15em;
   text-decoration: none;
   transition: var(--transition);
-  line-height: 1;
 }
 
 .btn-gold {
@@ -287,13 +283,7 @@
 .testimonials-marquee {
   position: relative;
   overflow: hidden;
-  mask-image: linear-gradient(
-    to right,
-    transparent 0,
-    black 6%,
-    black 94%,
-    transparent 100%
-  );
+  mask-image: linear-gradient(to right, transparent 0, black 6%, black 94%, transparent 100%);
 }
 
 .testimonials-track {
