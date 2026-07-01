@@ -197,10 +197,10 @@ const Home: React.FC = () => {
             transition={{ delay: 1.4 }}
           >
             <Link to="/services" className="btn btn-gold">
-              Zakažite termin
+              ZAKAŽITE TERMIN
             </Link>
             <Link to="/gallery" className="btn btn-outline">
-              Naši radovi
+              NAŠI RADOVI
             </Link>
           </motion.div>
         </div>
