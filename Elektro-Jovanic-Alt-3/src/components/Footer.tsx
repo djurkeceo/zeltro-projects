@@ -60,7 +60,7 @@ const Footer = () => {
             <span>Majšanski put 134A, Subotica</span>
             <span className="hidden sm:inline text-white/20">|</span>
             <a
-              href="tel:0642072352"
+              href="tel:0658275055"
               className="hover:text-brand-gold transition-colors"
             >
               065 / 827-5055

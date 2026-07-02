@@ -53,7 +53,7 @@ const Navbar = () => {
             ))}
           </div>
           <a
-            href="tel:0642072352"
+            href="tel:0658275055"
             className="bg-brand-gold hover:bg-yellow-500 text-brand-black px-6 py-2.5 rounded font-bold transition-all hover:scale-105 uppercase tracking-wide text-sm shadow-[0_0_15px_rgba(245,166,35,0.3)] hover:shadow-[0_0_20px_rgba(245,166,35,0.5)]"
           >
             Pozovite nas
@@ -90,7 +90,7 @@ const Navbar = () => {
                 </a>
               ))}
               <a
-                href="tel:0642072352"
+                href="tel:0658275055"
                 onClick={() => setMobileMenuOpen(false)}
                 className="bg-brand-gold text-brand-black text-center mt-4 px-6 py-3 rounded font-bold uppercase tracking-wider"
               >
