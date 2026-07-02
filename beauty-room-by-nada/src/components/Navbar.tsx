@@ -1,39 +1,43 @@
-import { useState, useEffect } from 'react'
-import { Link, useLocation } from 'react-router-dom'
-import { motion, AnimatePresence } from 'framer-motion'
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 
 const links = [
-  { to: '/', label: 'Početna' },
-  { to: '/usluge', label: 'Usluge' },
-  { to: '/cenovnik', label: 'Cenovnik' },
-  { to: '/kontakt', label: 'Kontakt' },
-]
+  { to: "/", label: "Početna" },
+  { to: "/usluge", label: "Usluge" },
+  { to: "/cenovnik", label: "Cenovnik" },
+  { to: "/kontakt", label: "Kontakt" },
+];
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false)
-  const [mobileOpen, setMobileOpen] = useState(false)
-  const { pathname } = useLocation()
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const { pathname } = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20)
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
-    setMobileOpen(false)
-  }, [pathname])
+    setMobileOpen(false);
+  }, [pathname]);
 
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? 'bg-dark/90 backdrop-blur-xl' : 'bg-transparent'
+        scrolled ? "bg-dark/90 backdrop-blur-xl" : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 sm:h-20">
         <Link to="/" className="flex flex-col leading-none shrink-0">
-          <span className="font-display italic text-[22px] text-cream leading-none">Beauty Room</span>
-          <span className="font-sans text-[11px] text-muted tracking-[0.2em] leading-none mt-0.5">by Nada</span>
+          <span className="font-display italic text-[22px] text-cream leading-none">
+            Beauty Room
+          </span>
+          <span className="font-sans text-[11px] text-muted tracking-[0.2em] leading-none mt-0.5">
+            by Nada
+          </span>
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
@@ -42,7 +46,9 @@ export default function Navbar() {
               key={link.to}
               to={link.to}
               className={`text-sm tracking-wide transition-colors duration-200 ${
-                pathname === link.to ? 'text-rose' : 'text-white/70 hover:text-white'
+                pathname === link.to
+                  ? "text-rose"
+                  : "text-white/70 hover:text-white"
               }`}
             >
               {link.label}
@@ -83,7 +89,7 @@ export default function Navbar() {
         {mobileOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
+            animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-dark/95 backdrop-blur-xl overflow-hidden"
           >
@@ -93,7 +99,9 @@ export default function Navbar() {
                   key={link.to}
                   to={link.to}
                   className={`text-lg transition-colors ${
-                    pathname === link.to ? 'text-rose' : 'text-white/70 hover:text-white'
+                    pathname === link.to
+                      ? "text-rose"
+                      : "text-white/70 hover:text-white"
                   }`}
                 >
                   {link.label}
@@ -112,5 +120,5 @@ export default function Navbar() {
         )}
       </AnimatePresence>
     </nav>
-  )
+  );
 }
