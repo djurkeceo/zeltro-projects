@@ -50,7 +50,7 @@ const Footer = () => {
 
           {/* Copyright Desktop */}
           <div className="hidden md:block text-brand-text-sec text-sm">
-            &copy; 2025 Jovanić Elektro.
+            &copy; 2026 Jovanić Elektro.
             <br /> Sva prava zadržana.
           </div>
         </div>
