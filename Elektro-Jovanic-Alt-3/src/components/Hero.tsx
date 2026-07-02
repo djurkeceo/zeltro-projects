@@ -59,7 +59,7 @@ const Hero = () => {
             className="flex flex-col sm:flex-row gap-5"
           >
             <a
-              href="tel:0658275055"
+              href="tel:0642072352"
               className="bg-brand-gold hover:bg-yellow-500 text-brand-black px-8 py-4 rounded font-bold text-lg text-center transition-all hover:scale-105 flex items-center justify-center gap-2 group uppercase tracking-wider shadow-[0_0_20px_rgba(245,166,35,0.3)] hover:shadow-[0_0_30px_rgba(245,166,35,0.5)]"
             >
               Pozovite nas
