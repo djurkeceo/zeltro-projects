@@ -88,7 +88,7 @@ export default function Recenzije() {
       <section className="bg-[#111111] border-y border-white/8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col sm:flex-row items-center gap-4">
           <span className="font-display text-5xl text-[#C8FF00] leading-none">
-            7★
+            4.7★
           </span>
           <span className="text-white/60 text-sm tracking-wider">
             150+ recenzija na Google Maps
