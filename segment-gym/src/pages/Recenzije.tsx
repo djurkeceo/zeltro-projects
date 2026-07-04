@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
   show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: 'easeOut' } },
-}
+} as const
 
 const stagger = {
   hidden: {},
@@ -23,14 +23,9 @@ const reviews = [
 
 function ReviewCard({ name, text }: { name: string; text: string }) {
   return (
-    <motion.div
-      variants={fadeUp}
-      className="bg-[#111111] border border-white/8 p-6"
-    >
+    <motion.div variants={fadeUp} className="bg-[#111111] border border-white/8 p-6">
       <div className="flex text-[#C8FF00] text-sm mb-2">
-        {[...Array(5)].map((_, i) => (
-          <span key={i}>★</span>
-        ))}
+        {[...Array(5)].map((_, i) => <span key={i}>★</span>)}
       </div>
       <span className="font-display text-lg tracking-wider text-white mb-2 block">{name}</span>
       <p className="text-white/60 text-sm leading-relaxed">{text}</p>
@@ -46,9 +41,7 @@ export default function Recenzije() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-24 pb-16">
           <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55 }}>
             <h1 className="font-display text-7xl sm:text-9xl text-white leading-none mb-6">RECENZIJE</h1>
-            <p className="text-white/60 text-lg max-w-xl">
-              Reči naših članova.
-            </p>
+            <p className="text-white/60 text-lg max-w-xl">Reči naših članova.</p>
           </motion.div>
         </div>
       </section>

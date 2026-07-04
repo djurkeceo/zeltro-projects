@@ -1,6 +1,6 @@
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
-import { useEffect } from 'react'
+import { useEffect, type ReactNode } from 'react'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
@@ -19,9 +19,9 @@ const pageVariants = {
   initial: { opacity: 0 },
   animate: { opacity: 1, transition: { duration: 0.35, ease: 'easeOut' } },
   exit: { opacity: 0, transition: { duration: 0.2 } },
-}
+} as const
 
-function AnimatedPage({ children }: { children: React.ReactNode }) {
+function AnimatedPage({ children }: { children: ReactNode }) {
   return (
     <motion.div variants={pageVariants} initial="initial" animate="animate" exit="exit">
       {children}
