@@ -54,7 +54,7 @@ export default function Home() {
           className="absolute inset-0"
           style={{ clipPath: 'polygon(60% 0, 100% 0, 100% 100%, 40% 100%)', background: '#111111' }}
         />
-        <div className="absolute left-6 top-1/2 -translate-y-1/2 w-1 h-48 bg-[#C8FF00]" />
+        <div className="hidden min-[1440px]:block absolute left-6 top-1/2 -translate-y-1/2 w-1 h-48 bg-[#C8FF00]" />
         <div className="absolute right-0 top-0 text-[25vw] font-display text-white/[0.04] leading-none select-none pointer-events-none rotate-90 origin-top-right translate-x-1/2">
           SEGMENT
         </div>
@@ -82,18 +82,18 @@ export default function Home() {
               Teretana Segment — veliki broj sprava, čist prostor i atmosfera koja te tera da daš sve od sebe.
             </motion.p>
             <motion.div variants={fadeUp} className="flex flex-wrap gap-4 mt-8">
-              <Link
-                to="/oprema"
-                className="bg-[#C8FF00] text-[#080808] font-bold px-8 py-4 text-sm tracking-widest uppercase hover:scale-[1.03] active:scale-[0.97] transition-transform"
-              >
-                Pogledaj opremu →
-              </Link>
               <a
                 href="tel:+381621528290"
-                className="border border-white/20 text-white px-8 py-4 text-sm tracking-widest uppercase hover:border-[#C8FF00] hover:text-[#C8FF00] transition-colors"
+                className="bg-[#C8FF00] text-[#080808] font-bold px-8 py-4 text-sm tracking-widest uppercase hover:scale-[1.03] active:scale-[0.97] transition-transform"
               >
                 Pozovi nas
               </a>
+              <Link
+                to="/oprema"
+                className="border border-white/20 text-white px-8 py-4 text-sm tracking-widest uppercase hover:border-[#C8FF00] hover:text-[#C8FF00] transition-colors"
+              >
+                Pogledaj opremu →
+              </Link>
             </motion.div>
             <motion.a
               variants={fadeUp}
@@ -191,9 +191,9 @@ export default function Home() {
           variants={stagger}
           className="grid grid-cols-1 md:grid-cols-3 gap-6"
         >
-          <ReviewCard name="Boris D." text="Good gym. Well ventilated, not that crowded, not bad assortment of equipment. Great." />
-          <ReviewCard name="Bojan L." text="Affordable prices and very flexible working hours, just great!" />
-          <ReviewCard name="Natalia" text="Great gym with a wide variety of equipment. The staff always greet you with a smile." />
+          <ReviewCard name="Orsolya B." text="I really like the gym! They have German, good quality machines, the gym and the changing rooms are clean, staff members are friendly." />
+          <ReviewCard name="Natalia N." text="Great gym with a wide variety of equipment. The staff always greet you with a smile and are always ready to help." />
+          <ReviewCard name="Miloš L." text="Clean, tidy, friendly staff, good music, large selection of training equipment." />
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 20 }}

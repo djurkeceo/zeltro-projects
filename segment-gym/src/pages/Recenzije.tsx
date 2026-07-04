@@ -12,31 +12,77 @@ const stagger = {
 
 const reviews = [
   {
+    name: "Orsolya B.",
+    text: "I really like the gym! They have German, good quality machines, the gym and the changing rooms are clean, staff members are friendly, and it's very simple to sign up for membership.",
+  },
+  {
+    name: "Natalia N.",
+    text: "Great gym with a wide variety of equipment. The best thing about this gym is the female receptionists. They always greet you with a smile and are always ready to help.",
+  },
+  {
+    name: "Kriszti",
+    text: "I love working out here, the girls are so cute and incredibly friendly. The place is pretty good, obviously not perfect, but it's perfect for what I need.",
+  },
+  {
     name: "Boris D.",
-    text: "Good gym. Well ventilated, not that crowded, not bad assortment of equipment. Great.",
+    text: "Good gym. Well ventilated, not that crowded, not bad assortment of equipment. A rowing machine or two would be nice to have.",
+  },
+  {
+    name: "Tejmur Š.",
+    text: "Large and well equipped. Everyone is pleasant and kind, both the staff and the gym users. The weights are put back neatly in their place.",
+  },
+  {
+    name: "Miloš L.",
+    text: "Clean, tidy, friendly staff, good music, large selection of training equipment.",
   },
   {
     name: "Bojan L.",
     text: "Affordable prices and very flexible working hours, just great!",
   },
-  { name: "Zsolt L.", text: "A well equipped gym in Subotica." },
   {
-    name: "Natalia",
-    text: "Great gym with a wide variety of equipment. The staff always greet you with a smile and are always ready to help.",
+    name: "Ani D.",
+    text: "For me, the best in town. A place of good energy and positive people, and above all clean.",
   },
   {
-    name: "Kriszti",
-    text: "I love working out here, the girls are so friendly. The place is pretty good — perfect for what I need.",
+    name: "Edina S.",
+    text: "Good place despite the fact that it's small. However, the cardio ticket is quite expensive for its size, currently 3000 dinars.",
   },
   {
-    name: "Orsolya B.",
-    text: "German, good quality machines. The gym and changing rooms are clean, staff members are friendly, and it's very simple to sign up.",
+    name: "Emanuel P.",
+    text: "Nice place, BUT NO WIFI! It should be basic. I hope it will be improved.",
   },
   {
-    name: "Tejmur Š.",
-    text: "Large and well equipped. Everyone is pleasant and kind — both staff and gym users. Equipment is always wiped down after use.",
+    name: "Rita B.",
+    text: "Clean gym! Friendly person! All praise!",
   },
-  { name: "Dita", text: "Exzellent!" },
+  {
+    name: "Ferenc T.",
+    text: "I really liked it. Homely. Run by nice people.",
+  },
+  {
+    name: "Ivan B.",
+    text: "Ideal place for training, hygiene 5+!!!",
+  },
+  {
+    name: "Miroslav M.",
+    text: "A nicely arranged space, something for everyone who wants to be in shape.",
+  },
+  {
+    name: "Ilija L.",
+    text: "Very, very neat gym.",
+  },
+  {
+    name: "Dita",
+    text: "Excellent!!",
+  },
+  {
+    name: "Bojan B.",
+    text: "Really good gym!",
+  },
+  {
+    name: "Zsolt L.",
+    text: "A well equipped gym in Subotica.",
+  },
 ];
 
 function ReviewCard({ name, text }: { name: string; text: string }) {
