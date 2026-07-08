@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' as const } },
 }
 
 const stagger = {
@@ -104,14 +104,14 @@ export default function Home() {
             Više od 14 godina posvećenosti lepoti i stilu.
           </motion.p>
           <motion.div variants={fadeUp} className="flex flex-wrap items-center justify-center gap-4 mt-10">
-            <a
+            <motion.a
               href="tel:0631106320"
               className="inline-flex px-8 py-3.5 rounded-full border border-[#BFA980]/60 text-[#BFA980] text-sm tracking-wider uppercase transition-all duration-300 hover:bg-[#BFA980] hover:text-[#0c0b09]"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
               Zakažite termin
-            </a>
+            </motion.a>
             <Link
               to="/usluge"
               className="text-white/50 hover:text-white underline-offset-4 hover:underline text-sm tracking-wider uppercase transition-colors"
