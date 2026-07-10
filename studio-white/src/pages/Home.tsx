@@ -123,11 +123,11 @@ export default function Home() {
       {/* O SALONU */}
       <section className="max-w-6xl mx-auto px-6 py-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div className="relative">
-          <div className="font-display italic font-light text-white/[0.06] leading-[0.9] select-none pointer-events-none"
+          <div className="absolute inset-0 flex items-center justify-center font-display italic font-light text-white/[0.06] leading-[0.9] select-none pointer-events-none"
             style={{ fontSize: 'clamp(2.5rem, 4vw, 4rem)' }}>
             Profesionalnost<br />i osmeh u svakom<br />tretmanu.
           </div>
-          <div className="absolute inset-0 flex flex-col justify-center">
+          <div className="relative z-10">
             <FadeUp>
               <p className="text-[#D4A8B0] text-[0.65rem] tracking-[0.4em] mb-4 uppercase">O NAMA</p>
               <h2 className="font-display italic font-light text-white mb-6"
