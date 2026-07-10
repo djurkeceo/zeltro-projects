@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ReactNode } from 'react'
+import type { ReactNode } from 'react'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
