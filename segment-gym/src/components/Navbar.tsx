@@ -134,7 +134,7 @@ export default function Navbar() {
               href="tel:+381621528290"
               className="mt-4 bg-[#C8FF00] text-[#080808] font-bold px-8 py-3 text-lg tracking-wider uppercase"
             >
-              Pozovite nass
+              Pozovite nas
             </a>
           </motion.div>
         )}
